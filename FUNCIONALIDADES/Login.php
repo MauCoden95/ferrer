@@ -11,13 +11,14 @@
         $consulta = mysqli_query($conexion, $sql);
 
         if ($sql) {
+            echo "Exist";
             $datos_usuario = mysqli_fetch_assoc($consulta);
             
 
             $verify = password_verify($password, $datos_usuario['password']);
 
             if ($verify) {
-                header('Location: ../PAGINAS/Includes.php');
+                header('Location: ../PAGINAS/Inicio.php');
                 $_SESSION['usuario'] = $datos_usuario;
                 var_dump($_SESSION['usuario']);
             }else{

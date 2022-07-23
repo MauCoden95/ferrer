@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 23-07-2022 a las 05:43:56
+-- Tiempo de generación: 23-07-2022 a las 22:23:28
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
@@ -33,16 +33,15 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `username`, `password`) VALUES
-(26, 'Geremias', '$2y$05$DGKBm7HsM.wteKVCLLHKLus74iOZRzVqAU8IF33B9AT64Mp6c27da'),
-(27, 'Jacinto', '$2y$05$edQdYozTAEABoE0H3dbUved13QRv6i0D0D68lPzTK.SJRWpgo5fPq'),
-(28, 'Admin', '$2y$05$7fh4DhNCtFiMP/SD7jjvd.fdKrUfHWK4ALrCjsrot1Kfvi8.UKAAq');
+(46, 'Gregorio', '$2y$05$3fx2PTHFF0al2uNMZbhv.ONT17nuYXt1bytYfGHApB14Ik.h8Ww9O'),
+(47, 'Admin', '$2y$05$NFAHuPkeGq4AZ8Ewkv2t/uLngsEa77g1bb3SYtjU1g40S76E8gh7u');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

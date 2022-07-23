@@ -10,31 +10,24 @@
 </head>
 <body>
     <header id="header">
-        <?php if(isset($_SESSION['usuario'])) : ?>
-            <div class="welcome-user">
-               <?php print_r("<h2>Bienvenido, ".$_SESSION['usuario']['username']."<h2>"); ?>
-            </div>
-        <?php endif; ?>
+        <div class="header-div">
+            <?php if(isset($_SESSION['usuario'])) : ?>
+               <h2>Bienvenido, <?php print_r($_SESSION['usuario']['username']); ?></h2>
+            <?php endif; ?>
+        </div>
+        
+        <navbar id="nav">
+
+            <ul>
+                <li><a href="#">Panel de Control</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Categoria</a></li>
+                <li><a href="#">Ventas</a></li>
+                <li><a href="#">Acerca de</a></li>
+            </ul>
+        </navbar>
     </header>
 
-    <navbar id="nav">
-       <div class="logo">
-            <img src="../ASSETS/IMG/LogoInicio.png" alt="Logo">
-       </div>
+    
 
-       <ul>
-           <li><a href="#">Panel de Control</a></li>
-           <li><a href="#">Productos</a></li>
-           <li><a href="#">Categoria</a></li>
-           <li><a href="#">Ventas</a></li>
-           <li><a href="#">Acerca de</a></li>
-       </ul>
-    </navbar>
-
-    <div id="pannel-user">
-        <div  class="logout">
-            <a href="../Index.php">Cerrar Sesion</a>
-        </div>
-    </div>
-</body>
-</html>
+    

@@ -14,8 +14,8 @@
         <?php if(isset($_SESSION['errores'])) : ?>
             <div class="error">
                 <ul>
-                    <li><?php print_r($_SESSION['errores']['username']); ?></li>
-                    <li><?php print_r($_SESSION['errores']['password']); ?></li>
+                    <?php isset($_SESSION['errores']['username']) ? print_r("<li>".$_SESSION['errores']['username'])."<li>" : false;  ?>
+                    <?php isset($_SESSION['errores']['password']) ? print_r("<li>".$_SESSION['errores']['password'])."<li>" : false;  ?>
                 </ul>
             </div>
         <?php elseif(isset($_SESSION['completo'])) : ?>

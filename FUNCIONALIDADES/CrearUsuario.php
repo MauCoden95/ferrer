@@ -17,9 +17,10 @@
         if (empty($password) || strlen($password) < 8) {
             $errores['password'] = "Error, contraseña vacía o con menos de 8 caracteres";
         }
-
+        var_dump($errores);
 
         if (count($errores) == 0) {
+            
             $password_segura = password_hash($password, PASSWORD_BCRYPT, ['cost' => 5]);
             
 
