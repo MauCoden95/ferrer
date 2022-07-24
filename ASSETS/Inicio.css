@@ -66,7 +66,7 @@ body{
 }
 
 #nav ul{
-    width: 100%;
+    width: 80%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -98,11 +98,35 @@ body{
 }
 
 #pannel-user{
-    position: absolute;
-    right: 0;
-    width: 105rem;
-    height: 53rem;
-    z-index: 1000000000;
-    background: red;
+    width: 100%;
+    min-height: 53rem;
 }
 
+.logout{
+    width: 30rem;
+    height: 10rem;
+    border: .1rem solid #09b459;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout a{
+    display: block;
+    background: rgb(192, 0, 0);
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem;
+    transition: all 300ms;
+}
+
+.logout a:hover{
+    background: rgb(255, 63, 63);
+}
+
+.change-username{
+    width: 50rem;
+    height: 40rem;
+    border: .1rem solid #09b459;
+}

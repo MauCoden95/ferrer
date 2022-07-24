@@ -5,8 +5,8 @@
 
         $username = isset($_POST['username']) ? $_POST['username'] : false;
         $password = isset($_POST['password']) ? $_POST['password'] : false;
-
-
+        
+        //echo $username,' ',$rol,' ',$password;
 
         $errores = array();
 
@@ -24,8 +24,10 @@
             $password_segura = password_hash($password, PASSWORD_BCRYPT, ['cost' => 5]);
             
 
-            $sql = "INSERT INTO usuarios VALUES(null, '$username','$password_segura');";
+            $sql = "INSERT INTO usuarios VALUES(null, '$username','Usuario Comun','$password_segura');";
             $guardar = mysqli_query($conexion,$sql);
+            
+           
 
             if ($guardar) {
                 echo "Usuario creado con exito!!!";

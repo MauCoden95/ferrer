@@ -22,7 +22,7 @@ body{
 }
 
 #form{
-    width: 35rem;
+    min-width: 35rem;
     min-height: 48rem;
     background: #fff;
     border-radius: 1rem;
@@ -44,6 +44,18 @@ body{
 
 #form div input[type="text"],
 #form div input[type="password"]{
+    display: block;
+    width: 80%;
+    margin: 2rem auto;
+    border: .1rem solid #03b154;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    outline: none;
+    padding-left: 2rem;
+}
+
+select{
     display: block;
     width: 80%;
     margin: 2rem auto;
