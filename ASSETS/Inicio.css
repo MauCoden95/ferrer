@@ -28,11 +28,11 @@ body{
 }
 
 #header .header-user{
-    width: 40%;
+    width: 60%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-end;
 }
 
 #header .header-user a{
@@ -43,6 +43,7 @@ body{
     padding: 1rem;
     text-decoration: none;
     transition: all 300ms;
+    margin-right: 1rem;
 }
 
 #header .header-user a:hover{
@@ -56,6 +57,7 @@ body{
 
 #header h2{
     font-size: 3.5rem;
+    margin-right: 1rem;
 }
 
 #container{
@@ -100,7 +102,57 @@ body{
     color: #09b459;
 }
 
-/* .content-div{
+.content-div{
     width: 80%;
-    height: ;
-} */
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.change-password,
+.change-username,
+.user-info{
+    width: 30rem;
+    min-height: 30rem;
+    border: .1rem solid #079d4d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.change-password h2,
+.change-username h2,
+.user-info h2{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.content-div input{
+    display: block;
+    width: 80%;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.error{
+    width: 100%;
+    height: auto;
+    background: #f00;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.success{
+    width: 100%;
+    height: auto;
+    background: rgb(0, 131, 0);
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+}

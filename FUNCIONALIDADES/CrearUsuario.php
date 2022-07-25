@@ -11,7 +11,7 @@
         $errores = array();
 
         if (empty($username)) {
-            $errores['username'] = "Error, usuario vacio";
+            $errores['username'] = "Error, usuario vacio o el usuario ya existe";
         }
 
         if (empty($password) || strlen($password) < 8) {
@@ -30,8 +30,9 @@
            
 
             if ($guardar) {
-                echo "Usuario creado con exito!!!";
                 $_SESSION['completo'] = "Nuevo usuario creado con exito!!!";
+            }else{
+                $errores['username_exist'] = "Error, el usuario ya existe";
             }
         }else{
             $_SESSION['errores'] = $errores;       
