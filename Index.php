@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7483adbd94.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./ASSETS/LoginRegistro.css">
     <title>Ferrer 1.0</title>
 </head>
@@ -17,8 +18,10 @@
             </div>
         <?php endif; ?>
         <div>
-            <input type="text" name="username" placeholder="Ingrese su usuario..." autocomplete="off">
-            <input type="password" name="password" placeholder="Ingrese su contraseña..." autocomplete="off">
+            <i class="fas fa-user user-icon"></i>
+            <i class="fas fa-key key-icon"></i>
+            <input type="text" name="username" placeholder="Ingrese su usuario" autocomplete="off">
+            <input type="password" name="password" placeholder="Ingrese su contraseña" autocomplete="off">
         </div>
         <input type="submit" value="Ingresar" id="enviar">
         <a href="./PAGINAS/Registrarse.php">Crear cuenta</a>

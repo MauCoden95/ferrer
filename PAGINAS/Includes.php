@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+
+   
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,14 +15,17 @@
 </head>
 <body>
     <header id="header">
-        <div class="header-div">
-            <?php if(isset($_SESSION['usuario'])) : ?>
-               <h2>Bienvenido, <?php print_r($_SESSION['usuario']['username']); ?></h2>
-            <?php endif; ?>
-        </div>
-        
-        <navbar id="nav">
+            <img src="../ASSETS/IMG/LogoInicio.png" alt="logo">
+            <div class="header-user">
+                <?php if(isset($_SESSION['usuario'])) : ?>
+                <h2>Bienvenido, <?php print_r($_SESSION['usuario']['username']); ?></h2>
+                <?php endif; ?>
+                <a href="../Index.php">Cerrar Sesión</a>
+            </div>
+    </header>
 
+    <section id="container">
+        <navbar id="nav">
             <ul>
                 <li><a href="./Inicio.php">Panel de Control</a></li>
                 <li><a href="#">Productos</a></li>
@@ -27,8 +34,5 @@
                 <li><a href="#">Acerca de</a></li>
             </ul>
         </navbar>
-    </header>
-
-    
 
     

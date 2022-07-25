@@ -23,110 +23,84 @@ body{
     box-shadow: 0 .5rem 1rem rgb(74, 74, 74);
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     background:  #09b459;
 }
 
-.header-div{
+#header .header-user{
     width: 40%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-.header-div a{
-    display: block;
-    font-size: 2rem;
-    padding: 1rem;
-    background: rgb(194, 0, 0);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    line-height: 2.7rem;
-}
-
-.header-div a:hover{
-    background: rgb(255, 45, 45);
-}
-
-
-.header-div h2{
-    font-size: 2.5rem;
-}
-
-#nav{
-    width: 70%;
-    height: 100%;
-    z-index: 1000;
-}
-
-#nav ul{
-    width: 80%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-#nav ul li{
+#header .header-user a{
+    display: block;
+    background: rgb(192, 0, 0);
+    color: #fff;
     font-size: 2rem;
     padding: 1rem;
-    list-style: none;
-    text-align: center;
+    text-decoration: none;
     transition: all 300ms;
 }
 
-#nav ul li:hover{
-    list-style: none;
-    background: #fff;
+#header .header-user a:hover{
+    background: rgb(255, 14, 14);
 }
 
-#nav ul li:hover a{
+#header img{
+    width: 9rem;
+    margin-left: 3rem;
+}
+
+#header h2{
+    font-size: 3.5rem;
+}
+
+#container{
+    width: 100%;
+    height: 61.8rem;
+    display: flex;
+    align-items: center;
+}
+
+#container #nav{
+    width: 20%;
+    height: 100%;
+    background: #079d4d;
+}
+
+#container #nav ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#container #nav ul li{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+#container #nav ul li a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    transition: all 300ms;
+    font-size: 2rem;
+    padding: 2rem 1rem;
+}
+
+#container #nav ul li a:hover{
+    background: #fff;
     color: #09b459;
 }
 
-#nav ul li a{
-    display: block;
-    font-size: 2rem;
-    color: #fff;
-    text-decoration: none;
-}
-
-#pannel-user{
-    width: 100%;
-    min-height: 53rem;
-}
-
-.logout{
-    width: 30rem;
-    height: 10rem;
-    border: .1rem solid #09b459;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logout a{
-    display: block;
-    background: rgb(192, 0, 0);
-    text-decoration: none;
-    color: #fff;
-    font-size: 2rem;
-    padding: 1rem;
-    transition: all 300ms;
-}
-
-.logout a:hover{
-    background: rgb(255, 63, 63);
-}
-
-.change-username{
-    width: 50rem;
-    height: 40rem;
-    border: .1rem solid #09b459;
-}
+/* .content-div{
+    width: 80%;
+    height: ;
+} */

@@ -21,6 +21,22 @@ body{
     justify-content: center;
 }
 
+.user-icon,
+.key-icon{
+    position: absolute;
+    font-size: 2rem;
+}
+
+.user-icon{
+    top: 21.5%;
+    right: 14%;
+}
+
+.key-icon{
+    top: 63%;
+    right: 14%;
+}
+
 #form{
     min-width: 35rem;
     min-height: 48rem;
@@ -38,6 +54,7 @@ body{
 }
 
 #form div{
+    position: relative;
     width: 100%;
     min-height: 10rem;
 }
