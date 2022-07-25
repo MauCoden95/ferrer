@@ -32,7 +32,7 @@
             if ($guardar) {
                 $_SESSION['completo'] = "Nuevo usuario creado con exito!!!";
             }else{
-                $errores['username_exist'] = "Error, el usuario ya existe";
+                
             }
         }else{
             $_SESSION['errores'] = $errores;       

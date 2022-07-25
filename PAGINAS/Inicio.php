@@ -17,6 +17,8 @@
                 <input type="password" name="change-password">
                 <input type="submit" value="Cambiar">
             </form>
+
+
             <form action="../FUNCIONALIDADES/CambiarUsuario.php" method="POST" class="change-password">
             <h2>Cambiar nombre de usuario</h2>
                 <?php if(isset($_SESSION['change_username_failed'])) : ?>
@@ -31,6 +33,8 @@
                 <input type="text" name="change-username" autocomplete="off">
                 <input type="submit" value="Cambiar">
             </form>
+
+            
             
             <form action="../FUNCIONALIDADES/DatosUsuario.php" method="POST" class="info-user">
             <h2>Datos del usuario</h2>
