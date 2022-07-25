@@ -10,36 +10,29 @@
             $_SESSION['change_username_failed'] = "Error, usuario vacio";
             header('Location: ../PAGINAS/Inicio.php');
        }else{
-            if ($consulta) {
-               
+            
+    
+
                 $user = $_SESSION['usuario']['username'];
-                $sql = "SELECT * FROM usuarios WHERE '$user' = username";
-                $consulta = mysqli_query($conexion,$sql);
-
-
-                
-                $change = "UPDATE usuarios SET username = '$username'";
+                $change = "UPDATE usuarios SET username = '$username' WHERE '$user' = username";
                 $change_username = mysqli_query($conexion,$change);
+                echo $user.' '.$username;
 
                 if ($change_username) {
-                    $_SESSION['change_username_success'] = "Usuario cambiado exitosamente";       
-                    header('Location: ../PAGINAS/Inicio.php');             
+                    $_SESSION['change_username_success'] = "Usuario cambiado exitosamente";         
                     unset($_SESSION['change_username_failed']);
                 }else{
                     $_SESSION['change_username_failed'] = "Error, el campo esta vacio o el usuario ya existe";
-                    header('Location: ../PAGINAS/Inicio.php'); 
                 }
 
 
 
-            }else{
-                
-            }
+            
        }
         
     }
 
-    
+    header('Location: ../PAGINAS/Inicio.php'); 
 
 
 
