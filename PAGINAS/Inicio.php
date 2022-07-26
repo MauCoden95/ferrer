@@ -1,6 +1,15 @@
 <?php
     require_once './Includes.php';
 ?>
+         <navbar id="nav">
+            <ul>
+                <li><a href="./Inicio.php">Panel de Control</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Categoria</a></li>
+                <li><a href="#">Ventas</a></li>
+                <li><a href="./Acercade.php">Acerca de</a></li>
+            </ul>
+        </navbar>
 
         <div class="content-div">
             <form action="../FUNCIONALIDADES/CambiarContraseña.php" method="POST" class="change-password">
@@ -38,7 +47,7 @@
             
             <form action="../FUNCIONALIDADES/DatosUsuario.php" method="POST" class="info-user">
             <h2>Datos del usuario</h2>
-               
+                    
             </form>
         </div>
     </section>

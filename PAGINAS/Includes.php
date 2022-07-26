@@ -25,14 +25,6 @@
     </header>
 
     <section id="container">
-        <navbar id="nav">
-            <ul>
-                <li><a href="./Inicio.php">Panel de Control</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Categoria</a></li>
-                <li><a href="#">Ventas</a></li>
-                <li><a href="#">Acerca de</a></li>
-            </ul>
-        </navbar>
+       
 
     
