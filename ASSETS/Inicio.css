@@ -16,6 +16,13 @@ body{
     position: relative;
 }
 
+
+
+
+
+
+/*HEADER*/
+
 #header{
     width: 100%;
     height: 9rem;
@@ -108,7 +115,7 @@ body{
     overflow-y: scroll;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .change-password,
@@ -163,18 +170,22 @@ body{
 
 /*PRODUCTOS*/
 .charge-product{
-    width: 50rem;
-    min-height: 35rem;
+    width: 40rem;
+    min-height: 30rem;
     border: .1rem solid #09b459;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
+.delete-product{
+    margin-top: 2rem;
+}
 
-.charge-product input{
+.charge-product input,
+.delete-product input{
     width: 95%;
+    font-size: 1.3rem;
     outline: none;
 }
 
@@ -190,7 +201,61 @@ body{
     cursor: pointer;
 }
 
+.delete-product{
+    width: 40rem;
+    min-height: 15rem;
+    border: .1rem solid #09b459;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
 
+
+
+.delete-product input[type='submit']{
+    background: rgb(255, 20, 20);
+    border: none;
+    cursor: pointer;
+}
+
+.delete-product input[type='submit']:hover{
+    background: rgb(255, 98, 98);
+    border: none;
+    cursor: pointer;
+}
+
+
+#product_table{
+    width: 20rem;
+    min-height: 20rem;
+    border: .1rem solid #09b459;
+}
+
+#product_table .product_table_hd,
+#product_table .product_table_bd{
+    height: 1rem;
+}
+
+
+#product_table .product_table_hd{
+    background: #09b459;
+    text-align: center;
+    font-size: 1rem;
+}
+
+#product_table .product_table_bd{
+    text-align: center;
+    font-size: 1.3rem;
+    background: rgb(219, 219, 219);
+    padding: 1rem;
+}
+
+
+#product_table .product_table_hd td,
+#product_table .product_table_bd td{
+    padding: 1rem;
+}
 
 
 
@@ -207,14 +272,34 @@ body{
 }
 
 .save-category,
-.delete-category{
-    width: 40rem;
+.delete-category,
+.update-category{
+    width: 45rem;
     height: 20rem;
-    border: .1rem solid #09b459;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.save-category{
+    border: .1rem solid #09b459;
+}
+
+.delete-category{
+    border: .1rem solid rgb(255, 20, 20);
+}
+
+.update-category{
+    border: .1rem solid rgb(0, 121, 191);
+}
+
+.save-category input,
+.delete-category input,
+.update-category input{
+    font-size: 1.2rem;
+    outline: none;
 }
 
 #category_table{
@@ -272,6 +357,17 @@ body{
     cursor: pointer;
 }
 
+.update-category input[type='submit']{
+    background: rgb(0, 121, 191);
+    border: none;
+    cursor: pointer;
+}
+
+.update-category input[type='submit']:hover{
+    background: rgb(7, 222, 226);
+    border: none;
+    cursor: pointer;
+}
 
 
 

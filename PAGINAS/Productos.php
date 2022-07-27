@@ -1,5 +1,6 @@
 <?php
     require_once './Includes.php';
+    require_once '../FUNCIONALIDADES/Conexion.php';
 ?>
          <navbar id="nav">
             <ul>
@@ -12,23 +13,74 @@
         </navbar>
 
         <div class="content-div">
-            <form action="../FUNCIONALIDADES/AgregarProducto.php" method="POST" class="charge-product">
-                    <?php if(isset($_SESSION['error_category_save'])) : ?>
-                        <div class="error">
-                        <p><?php print_r($_SESSION['error_category_save']); ?></p>
-                        </div>
-                    <?php elseif(isset($_SESSION['success_product_save'])) : ?>
-                        <div class="success">
-                            <p><?php print_r($_SESSION['success_product_save']); ?></p>
-                        </div>
-                    <?php endif; ?>
-                    <input type="text" name="description" placeholder="Descripcion" autocomplete="off">
-                    <input type="text" name="category" placeholder="Categoria">
-                    <input type="number" name="price" placeholder="Precio">
-                    <input type="number" name="stock" placeholder="Stock">
-                    <input type="number" name="stock_reposition" placeholder="Stock de reposicion">
-                    <input type="submit" value="Guardar producto">
-            </form>
+            <div class="forms-category">
+                <form action="../FUNCIONALIDADES/AgregarProducto.php" method="POST" class="charge-product">
+                        <?php if(isset($_SESSION['error_category_save'])) : ?>
+                            <div class="error">
+                            <p><?php print_r($_SESSION['error_category_save']); ?></p>
+                            </div>
+                        <?php elseif(isset($_SESSION['success_product_save'])) : ?>
+                            <div class="success">
+                                <p><?php print_r($_SESSION['success_product_save']); ?></p>
+                            </div>
+                        <?php endif; ?>
+                        <input type="text" name="description" placeholder="Descripcion" autocomplete="off">
+                        <input type="text" name="category" placeholder="Categoria">
+                        <input type="number" name="price" placeholder="Precio">
+                        <input type="number" name="stock" placeholder="Stock">
+                        <input type="number" name="stock_reposition" placeholder="Stock de reposicion">
+                        <input type="submit" value="Guardar producto">
+                </form>
+
+                <form action="../FUNCIONALIDADES/EliminarProducto.php" method="POST" class="delete-product">
+                        <input type="text" name="description" placeholder="Descripcion" autocomplete="off">
+                        <input type="submit" value="Eliminar producto">
+                </form>
+
+            </div>
+                            
+            <table id="product_table">
+                    <tr class="product_table_hd">
+                        <td>Id</td>
+                        <td>Descripcion</td>
+                        <td>Precio</td>
+                        <td>Stock</td>
+                        <td>Stock de reposicion</td>
+                    </tr>
+
+                        <?php 
+                            $sql = "SELECT * FROM productos;";
+                            $result =  mysqli_query($conexion,$sql);
+
+                            
+
+                            while ($view = mysqli_fetch_assoc($result)) :        
+                                // $int_id_category = number_format($view['id']);
+                                // $sql_category = "SELECT nombre FROM categorias WHERE IN (SELECT categoria_id FROM usuarios WHERE categoria_id = $int_id_category);";
+                                // $sql_category_query = mysqli_query($conexion,$sql_category); 
+                                // $error = mysqli_errno($sql_category_query);
+
+                                // $category_query_fetch = mysqli_fetch_assoc($sql_category_query);
+                                // var_dump($category_query_fetch);
+                        ?>
+
+                    <tr class="product_table_bd">
+                        <td><?php echo $view['id']; ?></td>
+                        
+                        <td><?php echo $view['descripcion']; ?></td>
+                        <td><?php echo $view['precio']; ?></td>
+                        <td><?php echo $view['stock']; ?></td>
+                        <td><?php echo $view['stock_reposicion']; ?></td>
+                    </tr>
+
+                    
+                    <?php
+                            endwhile;
+
+                            
+                        
+                        ?>
+                </table>
 
             
         </div>

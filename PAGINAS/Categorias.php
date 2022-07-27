@@ -41,6 +41,13 @@
                     <input type="text" name="category" placeholder="Nombre de la categoria..." autocomplete="off">
                     <input type="submit" value="Eliminar Categoria">
                 </form>
+
+                <form action="../FUNCIONALIDADES/ActualizarCategoria.php" method="post" class="update-category">
+                    <input type="text" name="category_before" placeholder="Nombre categoria anterior" autocomplete="off">
+                    <input type="text" name="category_new" placeholder="Nombre categoria nuevo" autocomplete="off">
+                    <input type="submit" value="Actualizar Categoria">
+                </form>
+
             </div>
            
 
