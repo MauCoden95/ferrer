@@ -13,42 +13,62 @@
         </navbar>
 
         <div class="content-div">
-           <form action="../FUNCIONALIDADES/AgregarCategoria.php" method="post" class="save-category">
-                <?php if(isset($_SESSION['error_category'])) : ?>
-                    <div class="error">
-                    <p><?php print_r($_SESSION['error_category']); ?></p>
-                    </div>
-                <?php elseif(isset($_SESSION['success_category'])) : ?>
-                    <div class="success">
-                        <p><?php print_r($_SESSION['success_category']); ?></p>
-                    </div>
-                 <?php endif; ?>
-               <input type="text" name="category" placeholder="Nombre de la categoria...">
-               <input type="submit" value="Guardar Categoria">
-           </form>
+            <div class="forms-category">
+                <form action="../FUNCIONALIDADES/AgregarCategoria.php" method="post" class="save-category">
+                    <?php if(isset($_SESSION['error_category_save'])) : ?>
+                        <div class="error">
+                        <p><?php print_r($_SESSION['error_category_save']); ?></p>
+                        </div>
+                    <?php elseif(isset($_SESSION['success_category_save'])) : ?>
+                        <div class="success">
+                            <p><?php print_r($_SESSION['success_category_save']); ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <input type="text" name="category" placeholder="Nombre de la categoria..." autocomplete="off">
+                    <input type="submit" value="Guardar Categoria">
+                </form>
+
+                <form action="../FUNCIONALIDADES/EliminarCategoria.php" method="post" class="delete-category">
+                    <?php if(isset($_SESSION['error_category_delete'])) : ?>
+                        <div class="error">
+                        <p><?php print_r($_SESSION['error_category_delete']); ?></p>
+                        </div>
+                    <?php elseif(isset($_SESSION['success_category_delete'])) : ?>
+                        <div class="success">
+                            <p><?php print_r($_SESSION['success_category_delete']); ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <input type="text" name="category" placeholder="Nombre de la categoria..." autocomplete="off">
+                    <input type="submit" value="Eliminar Categoria">
+                </form>
+            </div>
+           
 
            <table id="category_table">
-               <tr>
+               <tr class="category_table_hd">
                    <td>Id</td>
-                   <td>Nombre</td>
+                   <td>Nombre categoria</td>
                </tr>
 
                 <?php 
                     $sql = "SELECT * FROM categorias;";
                     $result =  mysqli_query($conexion,$sql);
 
-             
+                  
 
                     while ($view = mysqli_fetch_assoc($result)) :
                 ?>
 
-               <tr>
-                   <td><?php $view['id']; ?></td>
-                   <td><?php $view['nombre']; ?></td>
+               <tr class="category_table_bd">
+                   <td><?php echo $view['id']; ?></td>
+                   <td><?php echo $view['nombre']; ?></tdss=>
                </tr>
 
+               
                <?php
                     endwhile;
+
+                    
                    
                 ?>
            </table>

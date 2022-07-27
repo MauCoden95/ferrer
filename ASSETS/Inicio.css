@@ -181,7 +181,17 @@ body{
 
 
 /*CATEGORIAS*/
-.save-category{
+.forms-category{
+    width: 40rem;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.save-category,
+.delete-category{
     width: 40rem;
     height: 20rem;
     border: .1rem solid #09b459;
@@ -192,12 +202,59 @@ body{
 }
 
 #category_table{
-    width: 30rem;
-    min-height: 40rem;
+    width: 40rem;
+    height: 20rem;
     border: .1rem solid #09b459;
 }
 
+#category_table .category_table_hd,
+#category_table .category_table_bd{
+    height: 1rem;
+}
 
+
+#category_table .category_table_hd{
+    background: #09b459;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#category_table .category_table_bd{
+    text-align: center;
+    font-size: 2rem;
+    background: rgb(219, 219, 219);
+    padding: 1rem;
+}
+
+
+#category_table .category_table_hd td,
+#category_table .category_table_bd td{
+    padding: 1rem;
+}
+
+.save-category input[type='submit']{
+    background: rgb(53, 201, 12);
+    border: none;
+    cursor: pointer;
+}
+
+.save-category input[type='submit']:hover{
+    background: rgb(112, 255, 72);
+    border: none;
+    cursor: pointer;
+}
+
+.delete-category input[type='submit']{
+    background: rgb(255, 20, 20);
+    border: none;
+    cursor: pointer;
+}
+
+.delete-category input[type='submit']:hover{
+    background: rgb(255, 98, 98);
+    border: none;
+    cursor: pointer;
+}
 
 
 

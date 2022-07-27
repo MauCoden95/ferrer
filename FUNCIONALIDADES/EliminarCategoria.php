@@ -9,14 +9,14 @@
 
 
         if (empty($nombre_categoria)) {
-            $_SESSION['error_category_save'] = "Error, categoria vacia";
+            $_SESSION['error_category_delete'] = "Error, categoria vacia";
         }else{
-            $sql = "INSERT INTO categorias VALUES(null,'$nombre_categoria');";
+            $sql = "DELETE FROM categorias WHERE nombre = '$nombre_categoria';";
             $query = mysqli_query($conexion,$sql);
 
             if ($query) {
-               $_SESSION['success_category_save'] = "Nueva categoria guardada exitosamente";
-               unset($_SESSION['error_category_save']);
+               $_SESSION['success_category_delete'] = "Categoria eliminada exitosamente";
+               unset($_SESSION['error_category_delete']);
             }
 
 
