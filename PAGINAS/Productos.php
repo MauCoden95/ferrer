@@ -13,6 +13,15 @@
 
         <div class="content-div">
             <form action="../FUNCIONALIDADES/AgregarProducto.php" method="POST" class="charge-product">
+                    <?php if(isset($_SESSION['error_category_save'])) : ?>
+                        <div class="error">
+                        <p><?php print_r($_SESSION['error_category_save']); ?></p>
+                        </div>
+                    <?php elseif(isset($_SESSION['success_product_save'])) : ?>
+                        <div class="success">
+                            <p><?php print_r($_SESSION['success_product_save']); ?></p>
+                        </div>
+                    <?php endif; ?>
                     <input type="text" name="description" placeholder="Descripcion" autocomplete="off">
                     <input type="text" name="category" placeholder="Categoria">
                     <input type="number" name="price" placeholder="Precio">
@@ -20,6 +29,8 @@
                     <input type="number" name="stock_reposition" placeholder="Stock de reposicion">
                     <input type="submit" value="Guardar producto">
             </form>
+
+            
         </div>
     </section>
     

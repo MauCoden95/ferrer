@@ -3,6 +3,7 @@ CREATE TABLE usuarios(
     username varchar(255) not null,
     rol varchar(255) default "Usuario Comun" not null,
     password varchar(255) not null,
+    image VARCHAR(255),
     constraint pk_usuarios primary key(id),
     constraint uq_username UNIQUE(username)
 )Engine=InnoDB;
@@ -18,7 +19,7 @@ CREATE TABLE productos(
     stock_reposicion int(200),
     imagen varchar(255),
     constraint pk_productos primary key(id),
-    constraint fk_producto_categorias FOREIGN KEY(categoria_id) REFERENCES categoria(id)
+    constraint fk_producto_categorias FOREIGN KEY(categoria_id) REFERENCES categorias(id)
 )Engine=InnoDB;
 
 
@@ -27,7 +28,7 @@ CREATE TABLE categorias(
     id int(255) auto_increment not null,
     nombre VARCHAR(255) not null,
     constraint pk_categorias PRIMARY KEY(id)
-)Engine=InnoDb;
+)Engine=InnoDB;
 
 
 INSERT INTO categorias VALUES(null,"Herramienta Manual");

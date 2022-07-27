@@ -18,7 +18,7 @@
             $verify = password_verify($password, $datos_usuario['password']);
 
             if ($verify) {
-                header('Location: ../PAGINAS/Inicio.php');
+                header('Location: ../PAGINAS/Productos');
                 $_SESSION['usuario'] = $datos_usuario;
                 var_dump($_SESSION['usuario']);
             }else{
