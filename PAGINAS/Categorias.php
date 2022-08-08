@@ -50,35 +50,41 @@
 
             </div>
            
+            <div class="tables">
+                        <div>
+                            <h2>Todas las categorias</h2>
+                                <table id="category_table">
+                                <tr class="category_table_hd">
+                                    <td>Id</td>
+                                    <td>Nombre categoria</td>
+                                </tr>
 
-           <table id="category_table">
-               <tr class="category_table_hd">
-                   <td>Id</td>
-                   <td>Nombre categoria</td>
-               </tr>
+                                    <?php 
+                                        $sql = "SELECT * FROM categorias;";
+                                        $result =  mysqli_query($conexion,$sql);
 
-                <?php 
-                    $sql = "SELECT * FROM categorias;";
-                    $result =  mysqli_query($conexion,$sql);
+                                    
 
-                  
+                                        while ($view = mysqli_fetch_assoc($result)) :
+                                    ?>
 
-                    while ($view = mysqli_fetch_assoc($result)) :
-                ?>
+                                <tr class="category_table_bd">
+                                    <td><?php echo $view['id']; ?></td>
+                                    <td><?php echo $view['nombre']; ?></tdss=>
+                                </tr>
 
-               <tr class="category_table_bd">
-                   <td><?php echo $view['id']; ?></td>
-                   <td><?php echo $view['nombre']; ?></tdss=>
-               </tr>
+                                
+                                <?php
+                                        endwhile;
 
-               
-               <?php
-                    endwhile;
+                                        
+                                    
+                                    ?>
+                            </table>
+                        </div>
+            </div>
 
-                    
-                   
-                ?>
-           </table>
+           
         </div>
 
 
