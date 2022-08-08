@@ -13,7 +13,7 @@
         </navbar>
 
         <div class="content-div">
-            <div class="forms-category">
+            <div class="forms-product">
                 <form action="../FUNCIONALIDADES/AgregarProducto.php" method="POST" class="charge-product">
                         <?php if(isset($_SESSION['error_category_save'])) : ?>
                             <div class="error">
@@ -55,13 +55,7 @@
                             
 
                             while ($view = mysqli_fetch_assoc($result)) :        
-                                // $int_id_category = number_format($view['id']);
-                                // $sql_category = "SELECT nombre FROM categorias WHERE IN (SELECT categoria_id FROM usuarios WHERE categoria_id = $int_id_category);";
-                                // $sql_category_query = mysqli_query($conexion,$sql_category); 
-                                // $error = mysqli_errno($sql_category_query);
-
-                                // $category_query_fetch = mysqli_fetch_assoc($sql_category_query);
-                                // var_dump($category_query_fetch);
+                             
                         ?>
 
                     <tr class="product_table_bd">
