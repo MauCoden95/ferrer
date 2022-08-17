@@ -12,6 +12,7 @@
         </navbar>
 
         <div class="content-div">
+            <div class="content-div-inicio">
             <form action="../FUNCIONALIDADES/CambiarContraseña.php" method="POST" class="change-password">
                 <h2>Cambiar contraseña</h2>
                 <?php if(isset($_SESSION['change_password_failed'])) : ?>
@@ -49,6 +50,8 @@
             <h2>Datos del usuario</h2>
                     
             </form>
+            </div>
+            
         </div>
     </section>
     
