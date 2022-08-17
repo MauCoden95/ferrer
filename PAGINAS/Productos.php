@@ -8,6 +8,7 @@
                 <li><a href="./Productos.php">Productos</a></li>
                 <li><a href="./Categorias.php">Categorias</a></li>
                 <li><a href="./Ventas.php">Ventas</a></li>
+                <li><a href="./Proveedores.php">Proveedores</a></li>
                 <li><a href="./Acercade.php">Acerca de</a></li>
             </ul>
         </navbar>
@@ -38,49 +39,95 @@
                 </form>
 
             </div>
-                            
+                
+            <div class="buttons_product">
+                <button class="product_list">Listar todos los productos</button>
+                <button class="product_list_stock">Listar productos a reponer</button>
+            </div>
+           
+            <div class="tables">
             <table id="product_table">
-                    <tr class="product_table_hd">
-                        <td>Id</td>
-                        <td>Descripcion</td>
-                        <td>Precio</td>
-                        <td>Stock</td>
-                        <td>Stock de reposicion</td>
-                    </tr>
+            
+            <tr class="product_table_hd">
+                <td>Id</td>
+                <td>Descripcion</td>
+                <td>Precio</td>
+                <td>Stock</td>
+                <td>Stock de reposicion</td>
+            </tr>
 
-                        <?php 
-                            $sql = "SELECT * FROM productos;";
-                            $result =  mysqli_query($conexion,$sql);
-
-                            
-
-                            while ($view = mysqli_fetch_assoc($result)) :        
-                             
-                        ?>
-
-                    <tr class="product_table_bd">
-                        <td><?php echo $view['id']; ?></td>
-                        
-                        <td><?php echo $view['descripcion']; ?></td>
-                        <td><?php echo $view['precio']; ?></td>
-                        <td><?php echo $view['stock']; ?></td>
-                        <td><?php echo $view['stock_reposicion']; ?></td>
-                    </tr>
+                <?php 
+                    $sql = "SELECT * FROM productos;";
+                    $result =  mysqli_query($conexion,$sql);
 
                     
-                    <?php
-                            endwhile;
 
-                            
-                        
-                        ?>
-                </table>
+                    while ($view = mysqli_fetch_assoc($result)) :        
+                     
+                ?>
 
+            <tr class="product_table_bd">
+                <td><?php echo $view['id']; ?></td>
+                
+                <td><?php echo $view['descripcion']; ?></td>
+                <td><?php echo $view['precio']; ?></td>
+                <td><?php echo $view['stock']; ?></td>
+                <td><?php echo $view['stock_reposicion']; ?></td>
+            </tr>
+
+            
+            <?php
+                    endwhile;
+
+                    
+                
+                ?>
+        </table>
+
+    
+        <table id="product_table_stock">
+    
+            <tr class="product_table_hd">
+                <td>Id</td>
+                <td>Descripcion</td>
+                <td>Precio</td>
+                <td>Stock</td>
+                <td>Stock de reposicion</td>
+            </tr>
+
+                <?php 
+                    $sql = "SELECT * FROM productos WHERE stock <= stock_reposicion;";
+                    $result =  mysqli_query($conexion,$sql);
+
+                    
+
+                    while ($view = mysqli_fetch_assoc($result)) :        
+                     
+                ?>
+
+            <tr class="product_table_bd">
+                <td><?php echo $view['id']; ?></td>
+                
+                <td><?php echo $view['descripcion']; ?></td>
+                <td><?php echo $view['precio']; ?></td>
+                <td><?php echo $view['stock']; ?></td>
+                <td><?php echo $view['stock_reposicion']; ?></td>
+            </tr>
+
+            
+            <?php
+                    endwhile;
+
+                    
+                
+                ?>
+        </table>
+            </div>
             
         </div>
     </section>
     
 
-   
+   <script src="../JS/Main.js"></script>
     </body>
 </html>

@@ -7,6 +7,7 @@
                 <li><a href="./Productos">Productos</a></li>
                 <li><a href="./Categorias.php">Categorias</a></li>
                 <li><a href="./Ventas.php">Ventas</a></li>
+                <li><a href="./Proveedores.php">Proveedores</a></li>
                 <li><a href="./Acercade.php">Acerca de</a></li>
             </ul>
         </navbar>
