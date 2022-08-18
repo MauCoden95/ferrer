@@ -33,11 +33,21 @@
                         <input type="submit" value="Guardar producto">
                 </form>
 
+                <form action="../FUNCIONALIDADES/ActualizarProducto.php" method="POST" class="update-product">
+                
+                        <input type="number" name="id" placeholder="Id">
+                        <input type="text" name="description_update" placeholder="Descripcion" autocomplete="off">
+                        <!--<input type="text" name="category" placeholder="Categoria">-->
+                        <input type="number" name="price_update" placeholder="Precio">
+                        <input type="number" name="stock_update" placeholder="Stock">
+                        <input type="number" name="stock_reposition_update" placeholder="Stock de reposicion">
+                        <input type="submit" value="Actualizar producto">
+                </form>
+
                 <form action="../FUNCIONALIDADES/EliminarProducto.php" method="POST" class="delete-product">
                         <input type="text" name="description" placeholder="Descripcion" autocomplete="off">
                         <input type="submit" value="Eliminar producto">
                 </form>
-
             </div>
                 
             <div class="buttons_product">

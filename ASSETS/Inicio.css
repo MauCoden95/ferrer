@@ -143,10 +143,6 @@ body{
     width: 80%;
     height: 100%;
     overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
 }
 
 .content-div-inicio{
@@ -251,14 +247,14 @@ body{
     width: 70%;
     height: 50rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    margin-top: 30rem;
-    margin-bottom: 5rem;
+    margin: 5rem auto;
+    margin-bottom: -10rem;
 }
 
 .charge-product{
-    width: 50%;
+    width: 30%;
     min-height: 30rem;
     border: .1rem solid #09b459;
     display: flex;
@@ -269,7 +265,8 @@ body{
 
 
 .charge-product input,
-.delete-product input{
+.delete-product input,
+.update-product input{
     width: 95%;
     font-size: 1.3rem;
     outline: none;
@@ -288,7 +285,7 @@ body{
 }
 
 .delete-product{
-    width: 40%;
+    width: 30%;
     min-height: 15rem;
     border: .1rem solid #09b459;
     display: flex;
@@ -296,7 +293,6 @@ body{
     align-items: center;
     justify-content: space-around;
 }
-
 
 
 .delete-product input[type='submit']{
@@ -311,12 +307,43 @@ body{
     cursor: pointer;
 }
 
+
+
+
+.update-product{
+    width: 30%;
+    min-height: 15rem;
+    border: .1rem solid #09b459;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: .5rem;
+}
+
+.update-product input{
+    margin: .3rem 0;
+}
+
+.update-product input[type='submit']{
+    background: rgb(2, 196, 202);
+    border: none;
+    cursor: pointer;
+}
+
+.update-product input[type='submit']:hover{
+    background: rgb(35, 236, 243);
+    border: none;
+    cursor: pointer;
+}
+
 .buttons_product{
     width: 60%;
     min-height: 2rem;
     display:  flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
     margin-bottom: 4rem;
 }
 
@@ -330,6 +357,7 @@ body{
     width: 70%;
     min-height: 20rem;
     margin-bottom: 10rem;
+    margin: 0 auto;
 }
 
 #product_table{
@@ -364,13 +392,13 @@ body{
 #product_table_stock .product_table_hd{
     background: #09b459;
     text-align: center;
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 #product_table .product_table_bd,
 #product_table_stock .product_table_bd{
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 2rem;
     background: rgb(219, 219, 219);
     padding: 1rem;
 }
@@ -380,7 +408,7 @@ body{
 #product_table .product_table_bd td,
 #product_table_stock .product_table_hd td,
 #product_table_stock .product_table_bd td{
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 
@@ -408,7 +436,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top:10rem;
+    margin: 0 auto;
+    margin-top: 3rem;
 }
 
 .save-category,
@@ -446,6 +475,7 @@ body{
     width: 80%;
     min-height: 20rem;
     border: .1rem solid #09b459;
+    margin-bottom: 3rem;
 }
 
 #category_table .category_table_hd,
