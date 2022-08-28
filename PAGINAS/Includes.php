@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/7483adbd94.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../ASSETS/Inicio.css">
+    <link rel="shortcut icon" href="../ASSETS/IMG/LogoInicio.png" type="image/x-icon">
     <title>FerrerSoft 1.0</title>
 </head>
 <body>

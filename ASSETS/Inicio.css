@@ -427,6 +427,7 @@ body{
     background: #004aad;
     text-align: center;
     font-size: 2rem;
+    padding: 1rem;
     color: #fff;
 }
 
@@ -582,7 +583,7 @@ body{
 
 #category_table{
     display: none;
-    width: 60%;
+    width: 80%;
     min-height: 20rem;
     border: .1rem solid var(--color-principal);
     margin: 2rem auto;
