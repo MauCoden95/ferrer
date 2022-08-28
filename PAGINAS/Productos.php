@@ -14,7 +14,25 @@
         </navbar>
 
         <div class="content-div">
-            <div class="forms-product">
+
+            <div class="buttons">
+                <div>
+                    <b>Total Productos: </b>
+                    <?php 
+                        $sql_total_products = mysqli_query($conexion,"SELECT count(*) FROM productos;");
+                       while ($pro = mysqli_fetch_assoc($sql_total_products)) {
+                        //var_dump($pro);
+                        echo "<span>".$pro['count(*)']."</span>";
+                       }
+                        //print_r("<span>$sql_total_products;</span>");
+                    ?>               
+                </div>
+                <button class="btn-add__product">Agregar Producto<i class="fas fa-plus-circle add-icon"></i></button>
+                <button class="btn-update__product">Actualizar Producto<i class="fas fa-edit update-icon"></i></button>
+                <button class="btn-delete__product">Eliminar Producto<i class="fas fa-minus-circle delete-icon"></i></button>
+                <button class="btn-list__product">Listado Productos<i class="fas fa-list list-icon"></i></button>
+            </div>
+         <div class="forms-product">
                 <form action="../FUNCIONALIDADES/AgregarProducto.php" method="POST" class="charge-product">
                         <?php if(isset($_SESSION['error_category_save'])) : ?>
                             <div class="error">
@@ -50,89 +68,91 @@
                 </form>
             </div>
                 
+         
+           
+            <div class="tables">
+
             <div class="buttons_product">
                 <button class="product_list">Listar todos los productos</button>
                 <button class="product_list_stock">Listar productos a reponer</button>
             </div>
-           
-            <div class="tables">
-            <table id="product_table">
-            
-            <tr class="product_table_hd">
-                <td>Id</td>
-                <td>Descripcion</td>
-                <td>Precio</td>
-                <td>Stock</td>
-                <td>Stock de reposicion</td>
-            </tr>
+                <table id="product_table">
+                    
+                    <tr class="product_table_hd">
+                        <td>Id</td>
+                        <td>Descripcion</td>
+                        <td>Precio</td>
+                        <td>Stock</td>
+                        <td>Stock de reposicion</td>
+                    </tr>
 
-                <?php 
-                    $sql = "SELECT * FROM productos;";
-                    $result =  mysqli_query($conexion,$sql);
+                        <?php 
+                            $sql = "SELECT * FROM productos;";
+                            $result =  mysqli_query($conexion,$sql);
+
+                            
+
+                            while ($view = mysqli_fetch_assoc($result)) :        
+                            
+                        ?>
+
+                    <tr class="product_table_bd">
+                        <td><?php echo $view['id']; ?></td>
+                        
+                        <td><?php echo $view['descripcion']; ?></td>
+                        <td><?php echo $view['precio']; ?></td>
+                        <td><?php echo $view['stock']; ?></td>
+                        <td><?php echo $view['stock_reposicion']; ?></td>
+                    </tr>
 
                     
+                    <?php
+                            endwhile;
 
-                    while ($view = mysqli_fetch_assoc($result)) :        
-                     
-                ?>
-
-            <tr class="product_table_bd">
-                <td><?php echo $view['id']; ?></td>
-                
-                <td><?php echo $view['descripcion']; ?></td>
-                <td><?php echo $view['precio']; ?></td>
-                <td><?php echo $view['stock']; ?></td>
-                <td><?php echo $view['stock_reposicion']; ?></td>
-            </tr>
-
-            
-            <?php
-                    endwhile;
-
-                    
-                
-                ?>
-        </table>
+                            
+                        
+                        ?>
+                </table>
 
     
-        <table id="product_table_stock">
-    
-            <tr class="product_table_hd">
-                <td>Id</td>
-                <td>Descripcion</td>
-                <td>Precio</td>
-                <td>Stock</td>
-                <td>Stock de reposicion</td>
-            </tr>
-
-                <?php 
-                    $sql = "SELECT * FROM productos WHERE stock <= stock_reposicion;";
-                    $result =  mysqli_query($conexion,$sql);
-
-                    
-
-                    while ($view = mysqli_fetch_assoc($result)) :        
-                     
-                ?>
-
-            <tr class="product_table_bd">
-                <td><?php echo $view['id']; ?></td>
-                
-                <td><?php echo $view['descripcion']; ?></td>
-                <td><?php echo $view['precio']; ?></td>
-                <td><?php echo $view['stock']; ?></td>
-                <td><?php echo $view['stock_reposicion']; ?></td>
-            </tr>
-
+                <table id="product_table_stock">
             
-            <?php
-                    endwhile;
+                    <tr class="product_table_hd">
+                        <td>Id</td>
+                        <td>Descripcion</td>
+                        <td>Precio</td>
+                        <td>Stock</td>
+                        <td>Stock de reposicion</td>
+                    </tr>
+
+                        <?php 
+                            $sql = "SELECT * FROM productos WHERE stock <= stock_reposicion;";
+                            $result =  mysqli_query($conexion,$sql);
+
+                            
+
+                            while ($view = mysqli_fetch_assoc($result)) :        
+                            
+                        ?>
+
+                    <tr class="product_table_bd">
+                        <td><?php echo $view['id']; ?></td>
+                        
+                        <td><?php echo $view['descripcion']; ?></td>
+                        <td><?php echo $view['precio']; ?></td>
+                        <td><?php echo $view['stock']; ?></td>
+                        <td><?php echo $view['stock_reposicion']; ?></td>
+                    </tr>
 
                     
-                
-                ?>
-        </table>
-            </div>
+                    <?php
+                            endwhile;
+
+                            
+                        
+                        ?>
+                </table>
+                    </div> 
             
         </div>
     </section>

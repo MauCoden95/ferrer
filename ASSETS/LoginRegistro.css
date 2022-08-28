@@ -1,11 +1,16 @@
-@import url('http://fonts.cdnfonts.com/css/excalibur-monospace');
+@import url('http://fonts.cdnfonts.com/css/segoe-ui-4');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     transition: all 300ms;
-    font-family: 'Excalibur Monospace', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+:root{
+    --color-principal: #004aad;
+    --color-secundario: #0060df;
 }
 
 html{
@@ -20,6 +25,8 @@ body{
     align-items: center;
     justify-content: center;
 }
+
+
 
 .user-icon,
 .key-icon{
@@ -38,7 +45,7 @@ body{
 }
 
 #form{
-    min-width: 35rem;
+    min-width: 47rem;
     min-height: 48rem;
     background: #fff;
     border-radius: 1rem;
@@ -64,7 +71,7 @@ body{
     display: block;
     width: 80%;
     margin: 2rem auto;
-    border: .1rem solid #03b154;
+    border: .1rem solid var(--color-principal);
     font-size: 1.5rem;
     padding: 1rem;
     border-radius: 1rem;
@@ -76,7 +83,7 @@ select{
     display: block;
     width: 80%;
     margin: 2rem auto;
-    border: .1rem solid #03b154;
+    border: .1rem solid var(--color-principal);
     font-size: 1.5rem;
     padding: 1rem;
     border-radius: 1rem;
@@ -86,7 +93,7 @@ select{
 
 #enviar{
     width: 80%;
-    background: #03b154;
+    background: var(--color-principal);
     font-size: 2rem;
     padding: 1rem;
     border-radius: 1rem;
@@ -95,12 +102,12 @@ select{
 }
 
 #enviar:hover{
-    background: #05ff7a;
+    background: var(--color-secundario);
 }
 
 a{
     display: block;
-    color: #03b154;
+    color: var(--color-principal);
     text-align: center;
     font-size: 2rem;
     text-decoration: none;
@@ -114,12 +121,19 @@ a:hover{
 
 #form .error{
     width: 100%;
-    height: auto;
+    min-height: 2rem;
+    background: rgb(201, 0, 0);
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    text-align: center;
+    /* width: 100%;
+    height: 100%;
     background: #f00;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
 
 #form .error ul{

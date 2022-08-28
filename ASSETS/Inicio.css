@@ -1,11 +1,16 @@
-@import url('http://fonts.cdnfonts.com/css/excalibur-monospace');
+@import url('http://fonts.cdnfonts.com/css/segoe-ui-4');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Excalibur Monospace', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     transition: all 300ms;
+}
+
+:root{
+    --color-principal: #004aad;
+    --color-secundario: #0060df;
 }
 
 html{
@@ -61,7 +66,17 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background:  #09b459;
+    background:  var(--color-principal);
+}
+
+#date{
+    width: 40rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
 }
 
 #header .header-user{
@@ -70,6 +85,10 @@ body{
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+#header .header-user h2{
+    font-size: 3rem;
 }
 
 #header .header-user a{
@@ -107,7 +126,7 @@ body{
 #container #nav{
     width: 20%;
     height: 100%;
-    background: #079d4d;
+    background: var(--color-secundario);
 }
 
 #container #nav ul{
@@ -136,7 +155,7 @@ body{
 
 #container #nav ul li a:hover{
     background: #fff;
-    color: #09b459;
+    color:  var(--color-principal);
 }
 
 .content-div{
@@ -158,7 +177,7 @@ body{
 .info-user{
     width: 30rem;
     min-height: 30rem;
-    border: .1rem solid #079d4d;
+    border: .1rem solid var(--color-principal);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -253,14 +272,17 @@ body{
     margin-bottom: -10rem;
 }
 
+
+
 .charge-product{
-    width: 30%;
+    width: 70%;
     min-height: 30rem;
     border: .1rem solid #09b459;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    margin: 0 auto;
 }
 
 
@@ -270,6 +292,9 @@ body{
     width: 95%;
     font-size: 1.3rem;
     outline: none;
+    margin: 0 auto;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
 }
 
 .charge-product input[type='submit']{
@@ -285,15 +310,16 @@ body{
 }
 
 .delete-product{
-    width: 30%;
+    display: none;
+    width: 70%;
     min-height: 15rem;
     border: .1rem solid #09b459;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    margin: 0 auto;
 }
 
+.delete-product input{
+    margin: 2rem auto;
+}
 
 .delete-product input[type='submit']{
     background: rgb(255, 20, 20);
@@ -311,24 +337,25 @@ body{
 
 
 .update-product{
-    width: 30%;
+    width: 70%;
     min-height: 15rem;
     border: .1rem solid #09b459;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
     padding: .5rem;
+    display: none;
+    margin: 0 auto;
 }
 
 .update-product input{
     margin: .3rem 0;
+    margin: 0 auto;
+    margin-bottom: 1rem;
 }
 
 .update-product input[type='submit']{
     background: rgb(2, 196, 202);
     border: none;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 .update-product input[type='submit']:hover{
@@ -338,26 +365,33 @@ body{
 }
 
 .buttons_product{
-    width: 60%;
+    width: 100%;
     min-height: 2rem;
-    display:  flex;
-    justify-content: space-between;
-    align-items: center;
     margin: 0 auto;
     margin-bottom: 4rem;
 }
 
 .buttons_product button{
-   font-size: 2rem;
-   padding: 1rem;
+   width: 30rem;
+   height: 5rem;
+   display: inline-block;
+   font-size: 1.5rem;
    cursor: pointer;
+   margin-bottom: 1rem;
+   float: left;
+   border: .1rem solid rgb(100, 100, 100);
+}
+
+.buttons_product button:hover{
+    background: #aaa;
 }
 
 .tables{
+    display: none;
     width: 70%;
     min-height: 20rem;
-    margin-bottom: 10rem;
     margin: 0 auto;
+    margin-top: -50rem;
 }
 
 #product_table{
@@ -413,7 +447,10 @@ body{
 
 
 
-
+.forms-product input{
+    font-size: 2rem;
+    padding: 1rem;
+}
 
 
 
@@ -430,6 +467,73 @@ body{
 
 
 /*CATEGORIAS*/
+.buttons{
+    width: 90%;
+    height: 15rem;
+    margin: 3rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.buttons button{
+    width: 15rem;
+    height: 70%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: .1rem solid #004aad;
+    background: #e2e2e2;
+    border-radius: 1rem;
+}
+
+.buttons button:hover{
+    background: rgb(158, 158, 158);
+}
+
+.buttons button i{
+    display: block;
+    font-size: 4rem;
+    margin-top: .3rem;
+}
+
+.buttons div{
+    width: 15rem;
+    height: 70%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: .1rem solid #004aad;
+    border-radius: 1rem;
+    text-align: center;
+    background: #599bf1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons div span{
+    margin-top: -1rem;
+    font-size: 4rem;
+}
+
+
+
+.add-icon{
+    color: #09b459;
+}
+
+.update-icon{
+    color: #599bf1;
+}
+
+.delete-icon{
+    color: rgb(243, 19, 19);
+}
+
+.list-icon{
+    color:  rgba(156, 98, 11, 0.822);
+}
+
 .forms-category{
     width: 90%;
     height: 30rem;
@@ -440,16 +544,18 @@ body{
     margin-top: 3rem;
 }
 
-.save-category,
+.save-category{
+    width: 50%;
+    min-height: 20rem;
+    margin: 2rem auto;  
+}
+
 .delete-category,
 .update-category{
-    width: 30%;
-    height: 20rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 2rem;
+    display: none;
+    width: 50%;
+    min-height: 20rem;
+    margin: 2rem auto;  
 }
 
 .save-category{
@@ -467,41 +573,65 @@ body{
 .save-category input,
 .delete-category input,
 .update-category input{
-    font-size: 1.2rem;
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 3rem auto;
     outline: none;
 }
 
 #category_table{
-    width: 80%;
+    display: none;
+    width: 60%;
     min-height: 20rem;
-    border: .1rem solid #09b459;
+    border: .1rem solid var(--color-principal);
+    margin: 2rem auto;
     margin-bottom: 3rem;
+    border-collapse: collapse;
 }
 
-#category_table .category_table_hd,
+#category_table td,
+#category_table th{
+    font-size: 3rem;
+    padding: 1rem;
+    border: .1rem solid #000;
+}
+
+#category-table thead{
+    background:  var(--color-principal);
+}
+
 #category_table .category_table_bd{
-    height: 1rem;
+    width: 100%;
+    height: 2rem;
+    border: .1rem solid #000;
 }
 
 
 #category_table .category_table_hd{
+    width: 100%;
+    height: 3rem;
     background: #09b459;
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
+    border: .1rem solid #000;
 }
 
 #category_table .category_table_bd{
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
     background: rgb(219, 219, 219);
     padding: 1rem;
 }
 
-
-#category_table .category_table_hd td,
-#category_table .category_table_bd td{
-    padding: 1rem;
+#category_table .category_table_hd .td-id{
+    width: 30%;
+    height: 7rem;
 }
+
+#category_table .category_table_bd .td-name{
+    width: 70%;
+    height: 7rem;
+} 
 
 .save-category input[type='submit']{
     background: rgb(53, 201, 12);
@@ -568,6 +698,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 9rem auto;
 }
 
 .about-content img{
