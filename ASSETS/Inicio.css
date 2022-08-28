@@ -395,6 +395,7 @@ body{
 }
 
 #product_table{
+    display: block;
     width: 100%;
     min-height: 20rem;
     margin-bottom: 5rem;

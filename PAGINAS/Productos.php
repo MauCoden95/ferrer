@@ -27,10 +27,12 @@
                         //print_r("<span>$sql_total_products;</span>");
                     ?>               
                 </div>
+                
                 <button class="btn-add__product">Agregar Producto<i class="fas fa-plus-circle add-icon"></i></button>
                 <button class="btn-update__product">Actualizar Producto<i class="fas fa-edit update-icon"></i></button>
                 <button class="btn-delete__product">Eliminar Producto<i class="fas fa-minus-circle delete-icon"></i></button>
                 <button class="btn-list__product">Listado Productos<i class="fas fa-list list-icon"></i></button>
+                    
             </div>
          <div class="forms-product">
                 <form action="../FUNCIONALIDADES/AgregarProducto.php" method="POST" class="charge-product">
