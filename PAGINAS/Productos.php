@@ -70,7 +70,21 @@
 
                 <form action="../FUNCIONALIDADES/ActualizarProducto.php" method="POST" class="update-product">
                 
-                        <input type="number" name="id" placeholder="Id">
+                <?php 
+                    $sql = "SELECT * FROM productos;";
+                    $query = mysqli_query($conexion, $sql);
+
+                   
+                ?>
+
+
+            <select name="descripcion">
+            <option value="--Descripcion--">--Descripcion--</option>
+                    <?php while($pro = mysqli_fetch_assoc($query)) : ?>
+                        <option value="<?= pro['descripcion'] ?>"><?= $pro['descripcion'] ?></option>         
+                   <?php endwhile; ?>
+               
+            </select>
                         <input type="text" name="description_update" placeholder="Descripcion" autocomplete="off">
                         <!--<input type="text" name="category" placeholder="Categoria">-->
                         <input type="number" name="price_update" placeholder="Precio">
@@ -80,7 +94,19 @@
                 </form>
 
                 <form action="../FUNCIONALIDADES/EliminarProducto.php" method="POST" class="delete-product">
-                        <input type="text" name="description" placeholder="Descripcion" autocomplete="off">
+                <?php 
+                    $sql = "SELECT * FROM productos;";
+                    $query = mysqli_query($conexion, $sql);
+
+                   
+                ?>
+                        <select name="description">
+                        <option value="--Descripcion--">--Descripcion--</option>
+                                <?php while($prod = mysqli_fetch_assoc($query)) : ?>
+                                    <option value="<?= $prod['descripcion'] ?>"><?= $prod['descripcion'] ?></option>         
+                            <?php endwhile; ?>
+                        
+                        </select>
                         <input type="submit" value="Eliminar producto">
                 </form>
             </div>

@@ -307,6 +307,14 @@ body{
     margin-bottom: 1rem;
 }
 
+.update-product select{
+    display: block;
+    width: 95%;
+    margin: 1rem auto;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
 .charge-product input[type='submit']{
     background: rgb(53, 201, 12);
     border: none;
@@ -319,12 +327,12 @@ body{
     cursor: pointer;
 }
 
-.charge-product .select{
+.forms-product select{
     display: block;
     width: 95%;
     padding: 1rem;
     font-size: 2rem;
-    margin: 0 auto;
+    margin: 1rem auto;
 }
 
 .delete-product{
