@@ -4,12 +4,12 @@
 ?>
          <navbar id="nav">
             <ul>
-                <li><a href="./Inicio.php">Panel de Control</a></li>
-                <li><a href="./Productos.php">Productos</a></li>
-                <li><a href="./Categorias.php">Categorias</a></li>
-                <li><a href="./Ventas.php">Ventas</a></li>
-                <li><a href="./Proveedores.php">Proveedores</a></li>
-                <li><a href="./Acercade.php">Acerca de</a></li>
+            <li><a href="./Inicio.php"><span>Panel de Control</span><i class="fas fa-cogs"></i></a></li>
+                <li><a href="./Productos"><span>Productos</span><i class="fas fa-box"></i></a></li>
+                <li><a href="./Categorias.php"><span>Categorias</span><i class="fas fa-list-ul"></i></a></li>
+                <li><a href="./Ventas.php"><span>Ventas</span><i class="fas fa-coins"></i></a></li>
+                <li><a href="./Proveedores.php"><span>Proveedores</span><i class="fas fa-cart-arrow-down"></i></a></li>
+                <li><a href="./Acercade.php"><span>Acerca de</span><i class="fas fa-address-book"></i></a></li>
             </ul>
         </navbar>
 
@@ -46,7 +46,22 @@
                             </div>
                         <?php endif; ?>
                         <input type="text" name="description" placeholder="Descripcion" autocomplete="off">
-                        <input type="text" name="category" placeholder="Categoria">
+                        <?php 
+                            $sql_category_select = "SELECT * FROM categorias;";
+                            $query_select = mysqli_query($conexion, $sql_category_select);
+
+                   
+                         ?>
+
+
+                            <select name="category" class="select">
+                            <option value="--Categoria--">--Categoria--</option>
+                                    <?php while($cat = mysqli_fetch_assoc($query_select)) : ?>
+                                        <option value="<?= $cat['nombre'] ?>"><?= $cat['nombre'] ?></option>         
+                                <?php endwhile; ?>
+                            
+                            </select>
+                        <!-- <input type="text" name="category" placeholder="Categoria"> -->
                         <input type="number" name="price" placeholder="Precio">
                         <input type="number" name="stock" placeholder="Stock">
                         <input type="number" name="stock_reposition" placeholder="Stock de reposicion">
@@ -74,109 +89,111 @@
            
             <div class="tables">
 
-            <div class="buttons_product">
-                <button class="product_list">Listar todos los productos</button>
-                <button class="product_list_stock">Listar productos a reponer</button>
-            </div>
-                <table id="product_table">
-                    
-                    <tr class="product_table_hd">
-                        <td>Id</td>
-                        <td>Categoria</td>
-                        <td>Descripcion</td>
-                        <td>Precio</td>
-                        <td>Stock</td>
-                        <td>Stock de reposicion</td>
-                    </tr>
+                    <div class="buttons_product">
+                        <button class="product_list">Listar todos los productos</button>
+                        <button class="product_list_stock">Listar productos a reponer</button>
+                    </div>
+                        <table id="product_table">
+                            
+                            <tr class="product_table_hd">
+                                <td>Id</td>
+                                <td>Categoria</td>
+                                <td>Descripcion</td>
+                                <td>Precio</td>
+                                <td>Stock</td>
+                                <td>Stock de reposicion</td>
+                            </tr>
 
-                        <?php 
-                            $sql = "SELECT p.id, c.nombre AS 'categoria', p.descripcion, p.precio, p.stock, p.stock_reposicion FROM productos p, categorias c WHERE c.id = p.categoria_id;";
-                            $result =  mysqli_query($conexion,$sql);
+                                <?php 
+                                    $sql = "SELECT p.id, c.nombre AS 'categoria', p.descripcion, p.precio, p.stock, p.stock_reposicion FROM productos p, categorias c WHERE c.id = p.categoria_id;";
+                                    $result =  mysqli_query($conexion,$sql);
+
+                                    
+
+                                    while ($view = mysqli_fetch_assoc($result)) :        
+                                    
+                                ?>
+
+                            <tr class="product_table_bd">
+                                <td><?php echo $view['id']; ?></td>
+                                <td><?php echo $view['categoria']; ?></td>
+                                <td><?php echo $view['descripcion']; ?></td>
+                                <td><?php echo $view['precio']; ?></td>
+                                <td><?php echo $view['stock']; ?></td>
+                                <td><?php echo $view['stock_reposicion']; ?></td>
+                            </tr>
 
                             
+                            <?php
+                                    endwhile;
 
-                            while ($view = mysqli_fetch_assoc($result)) :        
-                            
-                        ?>
-
-                    <tr class="product_table_bd">
-                        <td><?php echo $view['id']; ?></td>
-                        <td><?php echo $view['categoria']; ?></td>
-                        <td><?php echo $view['descripcion']; ?></td>
-                        <td><?php echo $view['precio']; ?></td>
-                        <td><?php echo $view['stock']; ?></td>
-                        <td><?php echo $view['stock_reposicion']; ?></td>
-                    </tr>
-
-                    
-                    <?php
-                            endwhile;
-
-                            
-                        
-                        ?>
-                </table>
+                                    
+                                
+                                ?>
+                        </table>
 
     
-                <table id="product_table_stock">
-            
-                    <tr class="product_table_hd">
-                        <td>Id</td>
-                        <td>Categoria</td>
-                        <td>Descripcion</td>
-                        <td>Precio</td>
-                        <td>Stock</td>
-                        <td>Stock de reposicion</td>
-                    </tr>
-
-                        <?php 
-                            $sql = "SELECT p.id, c.nombre AS 'categoria', p.descripcion, p.precio, p.stock, p.stock_reposicion FROM productos p, categorias c WHERE c.id = p.categoria_id AND stock <= stock_reposicion;";
-                            $result =  mysqli_query($conexion,$sql);
-
-                            
-
-                            
-                            // $sql_category = "SELECT nombre FROM categorias WHERE id IN (SELECT categoria_id FROM productos)";
-                            // $sql_category_query = mysqli_query($conexion,$sql_category);
-
-                            /*
-                                select e.id, e.titulo, u.nombre as 'Autor', c.nombre as 'Categoria'
-                                from entradas e, usuarios u, categorias c
-                                where e.usuario_id =  u.id and e.categoria_id = c.id ORDER BY e.id;
-
-                                 select c.nombre
-                                from categorias c, productos p
-                                where p.categoria_id =  c.id;
-                            */
-
-                            //$sql_category = "SELECT c.nombre FROM categorias c, productos p WHERE  c.id = p.categoria_id;";
-                            
-                            
-                            while ($view = mysqli_fetch_assoc($result)) :        
-                                //$sql_category_query = mysqli_query($conexion,$sql_category);
-                                
-                               
-                        ?>
-
-                    <tr class="product_table_bd">
-                        <td><?php echo $view['id']; ?></td>
-                        <td>
-                        <?php echo $view['categoria']; ?>
-                        </td>
-                        <td><?php echo $view['descripcion']; ?></td>
-                        <td><?php echo $view['precio']; ?></td>
-                        <td><?php echo $view['stock']; ?></td>
-                        <td><?php echo $view['stock_reposicion']; ?></td>
-                    </tr>
-
+                        <table id="product_table_stock">
                     
-                    <?php
-                            endwhile;
+                            <tr class="product_table_hd">
+                                <td>Id</td>
+                                <td>Categoria</td>
+                                <td>Descripcion</td>
+                                <td>Precio</td>
+                                <td>Stock</td>
+                                <td>Stock de reposicion</td>
+                            </tr>
+
+                                <?php 
+                                    $sql = "SELECT p.id, c.nombre AS 'categoria', p.descripcion, p.precio, p.stock, p.stock_reposicion FROM productos p, categorias c WHERE c.id = p.categoria_id AND stock <= stock_reposicion;";
+                                    $result =  mysqli_query($conexion,$sql);
+
+                                    
+
+                                    
+                                    // $sql_category = "SELECT nombre FROM categorias WHERE id IN (SELECT categoria_id FROM productos)";
+                                    // $sql_category_query = mysqli_query($conexion,$sql_category);
+
+                                    /*
+                                        select e.id, e.titulo, u.nombre as 'Autor', c.nombre as 'Categoria'
+                                        from entradas e, usuarios u, categorias c
+                                        where e.usuario_id =  u.id and e.categoria_id = c.id ORDER BY e.id;
+
+                                        select c.nombre
+                                        from categorias c, productos p
+                                        where p.categoria_id =  c.id;
+                                    */
+
+                                    //$sql_category = "SELECT c.nombre FROM categorias c, productos p WHERE  c.id = p.categoria_id;";
+                                    
+                                    
+                                    while ($view = mysqli_fetch_assoc($result)) :        
+                                        //$sql_category_query = mysqli_query($conexion,$sql_category);
+                                        
+                                    
+                                ?>
+
+                            <tr class="product_table_bd">
+                                <td><?php echo $view['id']; ?></td>
+                                <td>
+                                <?php echo $view['categoria']; ?>
+                                </td>
+                                <td><?php echo $view['descripcion']; ?></td>
+                                <td><?php echo $view['precio']; ?></td>
+                                <td><?php echo $view['stock']; ?></td>
+                                <td><?php echo $view['stock_reposicion']; ?></td>
+                            </tr>
 
                             
+                            <?php
+                                    endwhile;
+
+                                    
+                                
+                                ?>
+                        </table>
+
                         
-                        ?>
-                </table>
                     </div> 
             
         </div>

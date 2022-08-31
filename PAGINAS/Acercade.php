@@ -3,12 +3,12 @@
 ?>
          <navbar id="nav">
             <ul>
-                <li><a href="./Inicio.php">Panel de Control</a></li>
-                <li><a href="./Productos.php">Productos</a></li>
-                <li><a href="#">Categoria</a></li>
-                <li><a href="./Ventas.php">Ventas</a></li>
-                <li><a href="./Proveedores.php">Proveedores</a></li>
-                <li><a href="./Acercade.php">Acerca de</a></li>
+                <li><a href="./Inicio.php"><span>Panel de Control</span><i class="fas fa-cogs"></i></a></li>
+                <li><a href="./Productos.php"><span>Productos</span><i class="fas fa-box"></i></a></li>
+                <li><a href="./Categorias.php"><span>Categoria</span><i class="fas fa-list-ul"></i></a></li>
+                <li><a href="./Ventas.php"><span>Ventas</span><i class="fas fa-coins"></i></a></li>
+                <li><a href="./Proveedores.php"><span>Proveedores</span><i class="fas fa-cart-arrow-down"></i></a></li>
+                <li><a href="./Acercade.php"><span>Acerca de</span><i class="fas fa-address-book"></i></a></li>
             </ul>
         </navbar>
 
