@@ -2,16 +2,7 @@
     require_once './Includes.php';
     require_once '../FUNCIONALIDADES/Conexion.php';
 ?>
-         <navbar id="nav">
-            <ul>
-            <li><a href="./Inicio.php"><span>Panel de Control</span><i class="fas fa-cogs"></i></a></li>
-                <li><a href="./Productos"><span>Productos</span><i class="fas fa-box"></i></a></li>
-                <li><a href="./Categorias.php"><span>Categorias</span><i class="fas fa-list-ul"></i></a></li>
-                <li><a href="./Ventas.php"><span>Ventas</span><i class="fas fa-coins"></i></a></li>
-                <li><a href="./Proveedores.php"><span>Proveedores</span><i class="fas fa-cart-arrow-down"></i></a></li>
-                <li><a href="./Acercade.php"><span>Acerca de</span><i class="fas fa-address-book"></i></a></li>
-            </ul>
-        </navbar>
+         
 
         <div class="content-div">
 
@@ -35,7 +26,7 @@
                     
             </div>
          <div class="forms-product">
-                <form action="../FUNCIONALIDADES/AgregarProducto.php" method="POST" class="charge-product">
+                <form action="../FUNCIONALIDADES/Producto/AgregarProducto.php" method="POST" class="charge-product">
                         <?php if(isset($_SESSION['error_category_save'])) : ?>
                             <div class="error">
                             <p><?php print_r($_SESSION['error_category_save']); ?></p>
@@ -68,7 +59,7 @@
                         <input type="submit" value="Guardar producto">
                 </form>
 
-                <form action="../FUNCIONALIDADES/ActualizarProducto.php" method="POST" class="update-product">
+                <form action="../FUNCIONALIDADES/Producto/ActualizarProducto.php" method="POST" class="update-product">
                 
                 <?php 
                     $sql = "SELECT * FROM productos;";
@@ -93,7 +84,7 @@
                         <input type="submit" value="Actualizar producto">
                 </form>
 
-                <form action="../FUNCIONALIDADES/EliminarProducto.php" method="POST" class="delete-product">
+                <form action="../FUNCIONALIDADES/Producto/EliminarProducto.php" method="POST" class="delete-product">
                 <?php 
                     $sql = "SELECT * FROM productos;";
                     $query = mysqli_query($conexion, $sql);

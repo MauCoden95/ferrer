@@ -2,16 +2,7 @@
     require_once './Includes.php';
     require_once '../FUNCIONALIDADES/Conexion.php';
 ?>
-         <navbar id="nav">
-            <ul>
-                <li><a href="./Inicio.php"><span>Panel de Control</span><i class="fas fa-cogs"></i></a></li>
-                <li><a href="./Productos"><span>Productos</span><i class="fas fa-box"></i></a></li>
-                <li><a href="./Categorias"><span>Categorias</span><i class="fas fa-list-ul"></i></a></li>
-                <li><a href="./Ventas.php"><span>Ventas</span><i class="fas fa-coins"></i></a></li>
-                <li><a href="./Proveedores.php"><span>Proveedores</span><i class="fas fa-cart-arrow-down"></i></a></li>
-                <li><a href="./Acercade.php"><span>Acerca de</span><i class="fas fa-address-book"></i></a></li>
-            </ul>
-        </navbar>
+       
 
         <div class="content-div">
             <div class="buttons">
@@ -32,7 +23,7 @@
                 <button class="btn-list__category">Listar Categorias<i class="fas fa-list list-icon"></i></button>
             </div>
 
-            <form action="../FUNCIONALIDADES/AgregarCategoria.php" method="post" class="save-category">
+            <form action="../FUNCIONALIDADES/Categoria/AgregarCategoria.php" method="post" class="save-category">
                     <?php if(isset($_SESSION['error_category_save'])) : ?>
                         <div class="error">
                         <p><?php print_r($_SESSION['error_category_save']); ?></p>
@@ -46,13 +37,13 @@
                     <input type="submit" value="Guardar Categoria">
                 </form>
 
-                <form action="../FUNCIONALIDADES/ActualizarCategoria.php" method="post" class="update-category">
+                <form action="../FUNCIONALIDADES/Categoria/ActualizarCategoria.php" method="post" class="update-category">
                     <input type="text" name="category_before" placeholder="Nombre categoria anterior" autocomplete="off">
                     <input type="text" name="category_new" placeholder="Nombre categoria nuevo" autocomplete="off">
                     <input type="submit" value="Actualizar Categoria">
                 </form>
 
-                <form action="../FUNCIONALIDADES/EliminarCategoria.php" method="post" class="delete-category">
+                <form action="../FUNCIONALIDADES/Categoria/EliminarCategoria.php" method="post" class="delete-category">
                     <?php if(isset($_SESSION['error_category_delete'])) : ?>
                         <div class="error">
                         <p><?php print_r($_SESSION['error_category_delete']); ?></p>

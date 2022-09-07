@@ -32,3 +32,22 @@ CREATE TABLE categorias(
 
 
 INSERT INTO categorias VALUES(null,"Herramienta Manual");
+
+CREATE TABLE proveedores(
+    id int(255) auto_increment not null,
+    razon_social VARCHAR(255) not null,
+    direccion VARCHAR(255) not null,
+    ciudad VARCHAR(255) not null,
+    codigo_postal int(100) null,
+    telefono int(255) not null,
+    constraint pk_proveedores PRIMARY KEY(id)
+)Engine=InnoDB;
+
+
+INSERT INTO proveedores VALUES(null,"Black & Decker SRL","Carlos Pinto 8900","Berazategui",NULL,46376737);
+INSERT INTO proveedores VALUES(null,"Herramientas Lugo SA","Av. La Plata 120","CABA",3456,46376737);
+INSERT INTO proveedores VALUES(null,"Equipamientos Liniers","Av. Rivadavia 7000","CABA",NULL,14415535);
+
+INSERT INTO proveedores VALUES(null,"Grupo Biwan","Olleros 1775","CABA",1236,32443324);
+INSERT INTO proveedores VALUES(null,"Herramientas Once SRL","Pueyrredón 350","CABA",1116,11116737);
+INSERT INTO proveedores VALUES(null,"Luisito y CIA.","Montevideo 666","CABA",NULL,14888535);
