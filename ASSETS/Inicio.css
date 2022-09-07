@@ -41,6 +41,76 @@ body{
 }
 
 
+.buttons{
+    width: 90%;
+    height: 15rem;
+    margin: 3rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.buttons button{
+    width: 15rem;
+    height: 70%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: .1rem solid #004aad;
+    background: #e2e2e2;
+    border-radius: 1rem;
+}
+
+.buttons button:hover{
+    background: rgb(158, 158, 158);
+}
+
+.buttons button i{
+    display: block;
+    font-size: 4rem;
+    margin-top: .3rem;
+}
+
+.buttons div{
+    width: 15rem;
+    height: 70%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: .1rem solid var(--color-principal);
+    border-radius: 1rem;
+    text-align: center;
+    background: #599bf1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons div span{
+    margin-top: -1rem;
+    font-size: 4rem;
+}
+
+
+
+.add-icon{
+    color: #09b459;
+}
+
+.update-icon{
+    color: #599bf1;
+}
+
+.delete-icon{
+    color: rgb(243, 19, 19);
+}
+
+.list-icon{
+    color:  rgba(156, 98, 11, 0.822);
+}
+
+
+
+
 
 
 
@@ -496,72 +566,6 @@ body{
 
 
 /*CATEGORIAS*/
-.buttons{
-    width: 90%;
-    height: 15rem;
-    margin: 3rem auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.buttons button{
-    width: 15rem;
-    height: 70%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border: .1rem solid #004aad;
-    background: #e2e2e2;
-    border-radius: 1rem;
-}
-
-.buttons button:hover{
-    background: rgb(158, 158, 158);
-}
-
-.buttons button i{
-    display: block;
-    font-size: 4rem;
-    margin-top: .3rem;
-}
-
-.buttons div{
-    width: 15rem;
-    height: 70%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border: .1rem solid var(--color-principal);
-    border-radius: 1rem;
-    text-align: center;
-    background: #599bf1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.buttons div span{
-    margin-top: -1rem;
-    font-size: 4rem;
-}
-
-
-
-.add-icon{
-    color: #09b459;
-}
-
-.update-icon{
-    color: #599bf1;
-}
-
-.delete-icon{
-    color: rgb(243, 19, 19);
-}
-
-.list-icon{
-    color:  rgba(156, 98, 11, 0.822);
-}
 
 .forms-category{
     width: 90%;
