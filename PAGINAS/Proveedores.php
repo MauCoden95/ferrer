@@ -31,8 +31,9 @@
                             <input type="text" name="name" placeholder="Razon social" autocomplete="off">
                             <input type="text" name="address" placeholder="Direccion" autocomplete="off">
                             <input type="text" name="city" placeholder="Ciudad" autocomplete="off">
-                            <input type="text" name="postal_code" placeholder="Codigo Postal" autocomplete="off">
-                            <input type="text" name="phone" placeholder="Telefono" autocomplete="off">
+                            <input type="number" name="postal_code" placeholder="Codigo Postal" autocomplete="off">
+                            <input type="number" name="phone" placeholder="Telefono" autocomplete="off">
+                            <input type="number" name="cuit" placeholder="Cuit" autocomplete="off">
                             <input type="submit" value="Guardar proveedor">
                     </form>
 
@@ -47,17 +48,18 @@
 
 
                             <select name="descripcion">
-                            <option value="--Descripcion--">--Descripcion--</option>
+                            <option value="--Razon Social--">--Razon Social--</option>
                                     <?php while($pro = mysqli_fetch_assoc($query)) : ?>
                                         <option value="<?= pro['descripcion'] ?>"><?= $pro['descripcion'] ?></option>         
                                 <?php endwhile; ?>
                             
                             </select>
-                        <input type="text" name="description_update" placeholder="Descripcion" autocomplete="off">
-                        <!--<input type="text" name="category" placeholder="Categoria">-->
-                        <input type="number" name="price_update" placeholder="Precio">
-                        <input type="number" name="stock_update" placeholder="Stock">
-                        <input type="number" name="stock_reposition_update" placeholder="Stock de reposicion">
+                            <input type="text" name="name" placeholder="Razon social" autocomplete="off">
+                            <input type="text" name="address" placeholder="Direccion" autocomplete="off">
+                            <input type="text" name="city" placeholder="Ciudad" autocomplete="off">
+                            <input type="number" name="postal_code" placeholder="Codigo Postal" autocomplete="off">
+                            <input type="number" name="phone" placeholder="Telefono" autocomplete="off">
+                            <input type="number" name="cuit" placeholder="Cuit" autocomplete="off">
                         <input type="submit" value="Actualizar proveedor">
                 </form>
 
@@ -69,7 +71,7 @@
                    
                 ?>
                         <select name="description">
-                        <option value="--Descripcion--">--Descripcion--</option>
+                        <option value="--Razon Social--">--Razon Social--</option>
                                 <?php while($prod = mysqli_fetch_assoc($query)) : ?>
                                     <option value="<?= $prod['razon_social'] ?>"><?= $prod['razon_social'] ?></option>         
                             <?php endwhile; ?>
@@ -89,6 +91,7 @@
                                         <td>Ciudad</td>
                                         <td>Codigo Postal</td>
                                         <td>Telefono</td>
+                                        <td>Cuit</td>
                                     </tr>
                                 </thead>
 
@@ -108,6 +111,7 @@
                                     <td><?php echo $view['ciudad']; ?></td>
                                     <td><?php echo $view['codigo_postal']; ?></td>
                                     <td><?php echo $view['telefono']; ?></td>
+                                    <td><?php echo $view['cuit']; ?></td>
                                 </tr>
 
                                 

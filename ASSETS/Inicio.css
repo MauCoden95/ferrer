@@ -725,6 +725,7 @@ body{
     width: 50%;
     min-height: 20rem;
     margin: 2rem auto;  
+    border: .1rem solid var(--color-principal);
 }
 
 
@@ -733,6 +734,8 @@ body{
     width: 50%;
     min-height: 20rem;
     margin: 2rem auto;  
+    margin-bottom: -10rem;
+    border: .1rem solid var(--color-principal);
 }
 
 .delete-provider{
@@ -741,19 +744,10 @@ body{
     min-height: 20rem;
     margin: 0rem auto;  
     margin-bottom: 28rem;
-}
-
-.charge-provider{
     border: .1rem solid var(--color-principal);
 }
 
-.delete-provider{
-    border: .1rem solid var(--color-principal);
-}
 
-.update-provider{
-    border: .1rem solid var(--color-principal);
-}
 
 .charge-provider input,
 .delete-provider input,
