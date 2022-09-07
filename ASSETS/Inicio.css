@@ -710,11 +710,126 @@ body{
 
 
 
+/*PROVEEDORES*/
+.forms-provider{
+    width: 90%;
+    height: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 15rem;
+}
+
+.charge-provider{
+    width: 50%;
+    min-height: 20rem;
+    margin: 2rem auto;  
+}
 
 
+.update-provider{
+    display: none;
+    width: 50%;
+    min-height: 20rem;
+    margin: 2rem auto;  
+}
+
+.delete-provider{
+    display: none;
+    width: 50%;
+    min-height: 20rem;
+    margin: 0rem auto;  
+    margin-bottom: 28rem;
+}
+
+.charge-provider{
+    border: .1rem solid var(--color-principal);
+}
+
+.delete-provider{
+    border: .1rem solid var(--color-principal);
+}
+
+.update-provider{
+    border: .1rem solid var(--color-principal);
+}
+
+.charge-provider input,
+.delete-provider input,
+.update-provider input{
+    width: 85%;
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 3rem auto;
+    outline: none;
+}
 
 
+.delete-provider select,
+.update-provider select{
+    width: 85%;
+    display: block;
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 3rem auto;
+    outline: none;
+}
 
+
+#provider_table{
+    display: none;
+    width: 80%;
+    min-height: 20rem;
+    border: .1rem solid var(--color-principal);
+    margin: -40rem auto;
+    border-collapse: collapse;
+}
+
+#provider_table td,
+#provider_table th{
+    font-size: 2rem;
+    padding: 1rem;
+    border: .1rem solid #000;
+}
+
+#provider-table thead{
+    background:  var(--color-principal);
+}
+
+#provider_table .provider_table_bd{
+    width: 100%;
+    height: 2rem;
+    border: .1rem solid #000;
+}
+
+
+#provider_table .provider_table_hd{
+    width: 100%;
+    height: 3rem;
+    background: var(--color-principal);
+    text-align: center;
+    font-size: 3rem;
+    border: .1rem solid #000;
+    color: #fff;
+}
+
+#provider_table .provider_table_bd{
+    text-align: center;
+    font-size: 3rem;
+    background: rgb(219, 219, 219);
+    padding: 1rem;
+}
+
+#provider_table .provider_table_hd .td-id{
+    width: 30%;
+    height: 7rem;
+}
+
+#provider_table .provider_table_bd .td-name{
+    width: 70%;
+    height: 7rem;
+} 
 
 
 
