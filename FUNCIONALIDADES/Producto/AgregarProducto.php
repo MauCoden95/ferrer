@@ -2,6 +2,11 @@
     require_once '../Conexion.php';
 
     if (isset($_POST)) {
+
+
+
+
+
         $description = isset($_POST['description']) ? $_POST['description'] : false;
         $category = isset($_POST['category']) ? $_POST['category'] : false;
         $price = isset($_POST['price']) ? $_POST['price'] : false;
@@ -37,3 +42,5 @@
 
 
 ?>
+
+

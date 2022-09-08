@@ -26,7 +26,7 @@
             </div>
 
             <div class="forms-provider">
-                    <form action="../FUNCIONALIDADES/Producto/AgregarProducto.php" method="POST" class="charge-provider">
+                    <form action="../FUNCIONALIDADES/Proveedor/AgregarProveedor.php" method="POST" class="charge-provider">
                             
                             <input type="text" name="name" placeholder="Razon social" autocomplete="off">
                             <input type="text" name="address" placeholder="Direccion" autocomplete="off">
@@ -40,7 +40,7 @@
                 <form action="../FUNCIONALIDADES/Producto/ActualizarProducto.php" method="POST" class="update-provider">
                 
                             <?php 
-                                $sql = "SELECT * FROM productos;";
+                                $sql = "SELECT * FROM proveedores;";
                                 $query = mysqli_query($conexion, $sql);
 
                             
@@ -50,7 +50,7 @@
                             <select name="descripcion">
                             <option value="--Razon Social--">--Razon Social--</option>
                                     <?php while($pro = mysqli_fetch_assoc($query)) : ?>
-                                        <option value="<?= pro['descripcion'] ?>"><?= $pro['descripcion'] ?></option>         
+                                        <option value="<?= pro['razon_social'] ?>"><?= $pro['razon_social'] ?></option>         
                                 <?php endwhile; ?>
                             
                             </select>
@@ -63,14 +63,14 @@
                         <input type="submit" value="Actualizar proveedor">
                 </form>
 
-                <form action="../FUNCIONALIDADES/Producto/EliminarProducto.php" method="POST" class="delete-provider">
+                <form action="../FUNCIONALIDADES/Proveedor/EliminarProveedor.php" method="POST" class="delete-provider">
                 <?php 
                     $sql = "SELECT * FROM proveedores;";
                     $query = mysqli_query($conexion, $sql);
 
                    
                 ?>
-                        <select name="description">
+                        <select name="razon_social">
                         <option value="--Razon Social--">--Razon Social--</option>
                                 <?php while($prod = mysqli_fetch_assoc($query)) : ?>
                                     <option value="<?= $prod['razon_social'] ?>"><?= $prod['razon_social'] ?></option>         

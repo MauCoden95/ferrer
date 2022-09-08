@@ -48,7 +48,6 @@ INSERT INTO proveedores VALUES(null,"Black & Decker SRL","Carlos Pinto 8900","Be
 INSERT INTO proveedores VALUES(null,"Herramientas Lugo SA","Av. La Plata 120","CABA",3456,46376737,27694888823);
 INSERT INTO proveedores VALUES(null,"Equipamientos Liniers","Av. Rivadavia 7000","CABA",2333,14415535,27620535570);
 
-INSERT INTO proveedores VALUES(null,"Grupo Biwan","Olleros 1775","CABA",1236,32443324,30547830640,30503163221);
 INSERT INTO proveedores VALUES(null,"Herramientas Once SRL","Pueyrredon 350","CABA",1116,11116737,20260085000);
 INSERT INTO proveedores VALUES(null,"Luisito y CIA.","Montevideo 666","CABA",9990,14888535,27213460922);
 
@@ -56,7 +55,9 @@ INSERT INTO proveedores VALUES(null,"Luisito y CIA.","Montevideo 666","CABA",999
 INSERT INTO proveedores VALUES(null,"LLaves y Herrajes SRL","Zabala 1925","CABA",3655,43745086,30461515947);
 INSERT INTO proveedores VALUES(null,"Herramientas Recoleta","Av Estado de Israel 4230","CABA",4450,13333737,30263102769);
 INSERT INTO proveedores VALUES(null,"Lussay SRL","Av Pueyrredon 146","Avellaneda",9999,14882387,24783954679);
-INSERT INTO proveedores VALUES(null,"Miraflor Herramientas","Jorge Luis Borges 2076","Lanus",0023,48990514,24619323447);
+INSERT INTO proveedores VALUES(null,"Miraflor Herramientas","Jorge Luis Borges 2076","Lanus",2023,48990514,24619323447);
+
+INSERT INTO proveedores VALUES(null,"Soddic Hnos","Juncal 2701","CABA",447,48990514,24619323447);
 
 
 ALTER TABLE proveedores ADD cuit varchar(100)not null;
