@@ -53,6 +53,7 @@
                 <li><a href="./Categorias.php"><span>Categorias</span><i class="fas fa-list-ul"></i></a></li>
                 <li><a href="./Ventas.php"><span>Ventas</span><i class="fas fa-coins"></i></a></li>
                 <li><a href="./Proveedores.php"><span>Proveedores</span><i class="fas fa-cart-arrow-down"></i></a></li>
+                <li><a href="./Empleados.php"><span>Empleados</span><i class="fas fa-briefcase"></i></a></li>
                 <li><a href="./Reportes.php"><span>Reportes</span><i class="fas fa-chart-line"></i></a></li>
                 <li><a href="./Acercade.php"><span>Acerca de</span><i class="fas fa-address-book"></i></a></li>
             </ul>

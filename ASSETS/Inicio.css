@@ -615,9 +615,8 @@ body{
 
 #category_table{
     display: none;
-    width: 80%;
+    width: 50%;
     min-height: 20rem;
-    border: .1rem solid var(--color-principal);
     margin: 2rem auto;
     margin-bottom: 3rem;
     border-collapse: collapse;
@@ -626,7 +625,7 @@ body{
 #category_table td,
 #category_table th{
     font-size: 3rem;
-    padding: 1rem;
+    padding: 2rem;
     border: .1rem solid #000;
 }
 
