@@ -42,6 +42,8 @@
                             $query_select = mysqli_query($conexion, $sql_category_select);
 
                    
+                            $sql_provider_select = "SELECT * FROM proveedores;";
+                            $query_select_provider = mysqli_query($conexion, $sql_provider_select);
                          ?>
 
 
@@ -49,6 +51,13 @@
                             <option value="--Categoria--">--Categoria--</option>
                                     <?php while($cat = mysqli_fetch_assoc($query_select)) : ?>
                                         <option value="<?= $cat['nombre'] ?>"><?= $cat['nombre'] ?></option>         
+                                <?php endwhile; ?>
+                            
+                            </select>
+                            <select name="provider" class="select">
+                            <option value="--Proveedor--">--Proveedor--</option>
+                                    <?php while($prov = mysqli_fetch_assoc($query_select_provider)) : ?>
+                                        <option value="<?= $prov['razon_social'] ?>"><?= $prov['razon_social'] ?></option>         
                                 <?php endwhile; ?>
                             
                             </select>
@@ -115,6 +124,7 @@
                             <tr class="product_table_hd">
                                 <td>Id</td>
                                 <td>Categoria</td>
+                                <td>Proveedor</td>
                                 <td>Descripcion</td>
                                 <td>Precio</td>
                                 <td>Stock</td>
@@ -122,7 +132,7 @@
                             </tr>
 
                                 <?php 
-                                    $sql = "SELECT p.id, c.nombre AS 'categoria', p.descripcion, p.precio, p.stock, p.stock_reposicion FROM productos p, categorias c WHERE c.id = p.categoria_id;";
+                                    $sql = "SELECT p.id, c.nombre AS 'categoria', pr.razon_social AS 'razon_social', p.descripcion, p.precio, p.stock, p.stock_reposicion FROM productos p, categorias c, proveedores pr WHERE c.id = p.categoria_id AND pr.id = p.proveedor_id;";
                                     $result =  mysqli_query($conexion,$sql);
 
                                     
@@ -134,6 +144,7 @@
                             <tr class="product_table_bd">
                                 <td><?php echo $view['id']; ?></td>
                                 <td><?php echo $view['categoria']; ?></td>
+                                <td><?php echo $view['razon_social']; ?></td>
                                 <td><?php echo $view['descripcion']; ?></td>
                                 <td><?php echo $view['precio']; ?></td>
                                 <td><?php echo $view['stock']; ?></td>
@@ -155,6 +166,7 @@
                             <tr class="product_table_hd">
                                 <td>Id</td>
                                 <td>Categoria</td>
+                                <td>Proveedor</td>
                                 <td>Descripcion</td>
                                 <td>Precio</td>
                                 <td>Stock</td>
@@ -162,30 +174,17 @@
                             </tr>
 
                                 <?php 
-                                    $sql = "SELECT p.id, c.nombre AS 'categoria', p.descripcion, p.precio, p.stock, p.stock_reposicion FROM productos p, categorias c WHERE c.id = p.categoria_id AND stock <= stock_reposicion;";
+                                    $sql = "SELECT p.id, c.nombre AS 'categoria', pr.razon_social AS 'razon_social', p.descripcion, p.precio, p.stock, p.stock_reposicion FROM productos p, categorias c, proveedores pr WHERE c.id = p.categoria_id AND pr.id = p.proveedor_id AND stock <= stock_reposicion;";
                                     $result =  mysqli_query($conexion,$sql);
 
                                     
 
                                     
-                                    // $sql_category = "SELECT nombre FROM categorias WHERE id IN (SELECT categoria_id FROM productos)";
-                                    // $sql_category_query = mysqli_query($conexion,$sql_category);
-
-                                    /*
-                                        select e.id, e.titulo, u.nombre as 'Autor', c.nombre as 'Categoria'
-                                        from entradas e, usuarios u, categorias c
-                                        where e.usuario_id =  u.id and e.categoria_id = c.id ORDER BY e.id;
-
-                                        select c.nombre
-                                        from categorias c, productos p
-                                        where p.categoria_id =  c.id;
-                                    */
-
-                                    //$sql_category = "SELECT c.nombre FROM categorias c, productos p WHERE  c.id = p.categoria_id;";
+                            
                                     
                                     
                                     while ($view = mysqli_fetch_assoc($result)) :        
-                                        //$sql_category_query = mysqli_query($conexion,$sql_category);
+                                      
                                         
                                     
                                 ?>
@@ -195,6 +194,7 @@
                                 <td>
                                 <?php echo $view['categoria']; ?>
                                 </td>
+                                <td><?php echo $view['razon_social']; ?></td>
                                 <td><?php echo $view['descripcion']; ?></td>
                                 <td><?php echo $view['precio']; ?></td>
                                 <td><?php echo $view['stock']; ?></td>
