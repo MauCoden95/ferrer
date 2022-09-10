@@ -831,6 +831,78 @@ body{
 
 
 
+/*CAJA*/
+#form-open-caja{
+    width: 70%;
+    min-height: 20rem;
+    border: .1rem solid black;
+    margin: 5rem auto;
+}
+
+#form-close-caja{
+    display: none;
+    width: 70%;
+    min-height: 20rem;
+    border: .1rem solid black;
+    margin: 5rem auto;
+}
+
+#form-open-caja input,
+#form-close-caja input{
+    display: block;
+    width: 90%;
+    outline: none;
+    margin: 5rem auto;
+}
+
+.caja-open{
+    color: #09b459;
+}
+
+.caja-close{
+    color: #f00;
+}
+
+
+#caja_table{
+    display: none;
+    width: 70%;
+    margin: 4rem auto;
+    margin-left: 30rem;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#caja_table thead tr{
+    background: var(--color-principal);
+    color: #fff;
+}
+
+
+#caja_table td,
+#caja_table th{
+    font-size: 2rem;
+    padding: 1rem;
+    border: .1rem solid #000;
+}
+
+#caja-table thead{
+    background:  var(--color-principal);
+}
+
+#caja-table .caja_table_bd{
+    background: #aaa;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

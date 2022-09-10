@@ -77,7 +77,7 @@
 
                                 <tr class="category_table_bd">
                                     <td><?php echo $view['id']; ?></td>
-                                    <td><?php echo $view['nombre']; ?></tdss=>
+                                    <td><?php echo $view['nombre']; ?></td>
                                 </tr>
 
                                 

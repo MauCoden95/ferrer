@@ -148,3 +148,12 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+CREATE TABLE cajas(
+  id int(255) auto_increment not null,
+  apertura int(100) not null,
+  cierre int(100) null,
+  fecha date,
+  constraint pk_caja PRIMARY KEY(id)
+)Engine=InnoDb;

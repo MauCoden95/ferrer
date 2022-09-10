@@ -193,3 +193,39 @@
 
    
   
+
+
+
+//CAJAS
+const buttonOpen = document.querySelector('.btn-open');
+const buttonClose = document.querySelector('.btn-close');
+const buttonTableCaja = document.querySelector('.btn-table-caja');
+
+const formOpenCaja = document.querySelector('#form-open-caja');
+const formCloseCaja = document.querySelector('#form-close-caja');
+const cajaTable = document.querySelector('#caja_table');
+
+
+if (buttonOpen) {
+    buttonOpen.addEventListener('click', () => {
+        formOpenCaja.style.display = "block";
+        formCloseCaja.style.display = "none";
+        cajaTable.style.display = "none";
+    });
+}
+
+if (buttonClose) {
+    buttonClose.addEventListener('click', () => {
+        formCloseCaja.style.display = "block";
+        formOpenCaja.style.display = "none";
+        cajaTable.style.display = "none";
+    });
+}
+
+if (buttonTableCaja) {
+    buttonTableCaja.addEventListener('click', () => {
+        cajaTable.style.display = "block";
+        formCloseCaja.style.display = "none";
+        formOpenCaja.style.display = "none";
+    });
+}
