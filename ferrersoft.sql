@@ -172,3 +172,6 @@ CREATE TABLE empleados(
   constraint pk_empleados PRIMARY KEY(id)
 )Engine=InnoDb;
 
+INSERT INTO empleados VALUES(NULL, "David Mena", 32312576, "Jefe","25 de Mayo 764 - CABA", 43107000, "1980-03-25", 1250000);
+INSERT INTO empleados VALUES(NULL, "Renata Zambrano", 38087858, "Cajera","Costa Rica 3990 - CABA", 48210842, "1997-09-20", 60000);
+INSERT INTO empleados VALUES(NULL, "Luciana Navarro Segundo", 36926065, "Jefa","Caaguazú 6299 - CABA", 46410756, "1971-04-07", 1250000);

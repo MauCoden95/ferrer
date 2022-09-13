@@ -1,5 +1,6 @@
 <?php
     require_once '../Conexion.php';
+    session_start();
 
     if (isset($_POST)) {
 
@@ -18,9 +19,10 @@
 
         if ($query) {
             echo "Proveedor guardado con exito!!!";
-
+            $_SESSION['success_provider_save'] = "Nuevo proveedor guardado con exito!!!";
         }else{
             echo "Hubo un error al guardar el nuevo proveedor";
+            $_SESSION['error_provider_save'] = "Hubo un error al guardar el nuevo proveedor";
         }
 
 

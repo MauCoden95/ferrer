@@ -27,7 +27,15 @@
 
             <div class="forms-provider">
                     <form action="../FUNCIONALIDADES/Proveedor/AgregarProveedor.php" method="POST" class="charge-provider">
-                            
+                         <?php if(isset($_SESSION['error_provider_save'])) : ?>
+                            <div class="error">
+                            <p><?php print_r($_SESSION['error_provider_save']); ?></p>
+                            </div>
+                        <?php elseif(isset($_SESSION['success_provider_save'])) : ?>
+                            <div class="success">
+                                <p><?php print_r($_SESSION['success_provider_save']); ?></p>
+                            </div>
+                        <?php endif; ?>
                             <input type="text" name="name" placeholder="Razon social" autocomplete="off">
                             <input type="text" name="address" placeholder="Direccion" autocomplete="off">
                             <input type="text" name="city" placeholder="Ciudad" autocomplete="off">
@@ -64,6 +72,11 @@
                 </form>
 
                 <form action="../FUNCIONALIDADES/Proveedor/EliminarProveedor.php" method="POST" class="delete-provider">
+                        <?php if(isset($_SESSION['success_provider_delete'])) : ?>
+                            <div class="success">
+                                <p><?php print_r($_SESSION['success_provider_delete']); ?></p>
+                            </div>
+                        <?php endif; ?>
                 <?php 
                     $sql = "SELECT * FROM proveedores;";
                     $query = mysqli_query($conexion, $sql);
