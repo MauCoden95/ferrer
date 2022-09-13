@@ -27,9 +27,9 @@
             </div>
          <div class="forms-product">
                 <form action="../FUNCIONALIDADES/Producto/AgregarProducto.php" method="POST" class="charge-product">
-                        <?php if(isset($_SESSION['error_category_save'])) : ?>
+                        <?php if(isset($_SESSION['error_product_save'])) : ?>
                             <div class="error">
-                            <p><?php print_r($_SESSION['error_category_save']); ?></p>
+                            <p><?php print_r($_SESSION['error_product_save']); ?></p>
                             </div>
                         <?php elseif(isset($_SESSION['success_product_save'])) : ?>
                             <div class="success">
@@ -93,7 +93,24 @@
                         <input type="submit" value="Actualizar producto">
                 </form>
 
+
+
+
+
+
+
+
+
                 <form action="../FUNCIONALIDADES/Producto/EliminarProducto.php" method="POST" class="delete-product">
+                <?php if(isset($_SESSION['error_product_delete'])) : ?>
+                            <div class="error">
+                            <p><?php print_r($_SESSION['error_product_delete']); ?></p>
+                            </div>
+                        <?php elseif(isset($_SESSION['success_product_delete'])) : ?>
+                            <div class="success">
+                                <p><?php print_r($_SESSION['success_product_delete']); ?></p>
+                            </div>
+                        <?php endif; ?>
                 <?php 
                     $sql = "SELECT * FROM productos;";
                     $query = mysqli_query($conexion, $sql);

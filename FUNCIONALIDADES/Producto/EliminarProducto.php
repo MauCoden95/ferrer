@@ -21,6 +21,8 @@
             if ($query) {
                $_SESSION['success_product_delete'] = "Producto eliminado exitosamente";
                unset($_SESSION['error_product_delete']);
+            }else{
+                $_SESSION['error_product_delete'] = "Error, producto vacio";
             }
 
 

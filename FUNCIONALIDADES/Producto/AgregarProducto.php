@@ -1,5 +1,6 @@
 <?php
     require_once '../Conexion.php';
+    session_start();
 
     if (isset($_POST)) {
 

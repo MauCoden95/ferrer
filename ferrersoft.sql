@@ -159,3 +159,16 @@ CREATE TABLE cajas(
 )Engine=InnoDb;
 
 
+
+CREATE TABLE empleados(
+  id int(255) auto_increment,
+  nombre VARCHAR(255) not null,
+  dni int(255) not null,
+  cargo VARCHAR(255) not null,
+  Direccion VARCHAR(255) not null,
+  telefono int(255) not null,
+  fecha_nacimiento date,
+  sueldo int(255) null,
+  constraint pk_empleados PRIMARY KEY(id)
+)Engine=InnoDb;
+
