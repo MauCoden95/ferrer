@@ -157,3 +157,5 @@ CREATE TABLE cajas(
   fecha date,
   constraint pk_caja PRIMARY KEY(id)
 )Engine=InnoDb;
+
+

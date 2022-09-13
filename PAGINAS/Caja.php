@@ -56,7 +56,7 @@
                                 </thead>
 
                                     <?php 
-                                        $sql = "SELECT * FROM cajas;";
+                                        $sql = "SELECT * FROM cajas ORDER BY fecha DESC;";
                                         $result =  mysqli_query($conexion,$sql);
 
                                     
