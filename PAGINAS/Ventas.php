@@ -1,14 +1,21 @@
 <?php
     require_once './Includes.php';
 ?>
-     
+            
+<?php if($_SESSION['usuario']) : ?>
+                <div class="content-div">
+                
+                </div>
+            </section>
+            
 
-        <div class="content-div">
-           
-        </div>
-    </section>
-    
+        
+            </body>
+        </html>
+<?php else : ?>
 
-   
-    </body>
-</html>
+        <?php 
+            header('Location: ../Index.php');    
+        ?>
+
+<?php endif; ?>

@@ -2,7 +2,7 @@
     require_once './Includes.php';
 ?>
       
-
+<?php if($_SESSION['usuario']) : ?>
         <div class="content-div">
            <div class="about-content">
                <img src="../ASSETS/IMG/Logo.png" alt="Logo">
@@ -24,3 +24,11 @@
    
     </body>
 </html>
+
+<?php else : ?>
+
+<?php 
+    header('Location: ../Index.php');    
+?>
+
+<?php endif; ?>
