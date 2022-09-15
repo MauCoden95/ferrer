@@ -69,24 +69,19 @@
                 </form>
 
                 <form action="../FUNCIONALIDADES/Producto/ActualizarProducto.php" method="POST" class="update-product">
-                
-                <?php 
-                    $sql = "SELECT * FROM productos;";
-                    $query = mysqli_query($conexion, $sql);
-
-                   
-                ?>
-
-
-            <select name="descripcion">
-            <option value="--Descripcion--">--Descripcion--</option>
-                    <?php while($pro = mysqli_fetch_assoc($query)) : ?>
-                        <option value="<?= pro['descripcion'] ?>"><?= $pro['descripcion'] ?></option>         
-                   <?php endwhile; ?>
-               
-            </select>
+                        <?php if(isset($_SESSION['error_product_update'])) : ?>
+                            <div class="error">
+                            <p><?php print_r($_SESSION['error_product_update']); ?></p>
+                            </div>
+                        <?php elseif(isset($_SESSION['success_product_update'])) : ?>
+                            <div class="success">
+                                <p><?php print_r($_SESSION['success_product_update']); ?></p>
+                            </div>
+                        <?php endif; ?>
+                        <input type="number" name="id_product" placeholder="Id" autocomplete="off">            
+                         <input type="text" name="category" placeholder="Categoria" autocomplete="off">
+                         <input type="text" name="provider" placeholder="Proveedor" autocomplete="off">
                         <input type="text" name="description_update" placeholder="Descripcion" autocomplete="off">
-                        <!--<input type="text" name="category" placeholder="Categoria">-->
                         <input type="number" name="price_update" placeholder="Precio">
                         <input type="number" name="stock_update" placeholder="Stock">
                         <input type="number" name="stock_reposition_update" placeholder="Stock de reposicion">
@@ -111,19 +106,7 @@
                                 <p><?php print_r($_SESSION['success_product_delete']); ?></p>
                             </div>
                         <?php endif; ?>
-                <?php 
-                    $sql = "SELECT * FROM productos;";
-                    $query = mysqli_query($conexion, $sql);
-
-                   
-                ?>
-                        <select name="description">
-                        <option value="--Descripcion--">--Descripcion--</option>
-                                <?php while($prod = mysqli_fetch_assoc($query)) : ?>
-                                    <option value="<?= $prod['descripcion'] ?>"><?= $prod['descripcion'] ?></option>         
-                            <?php endwhile; ?>
-                        
-                        </select>
+                        <input type="number" name="id_product" placeholder="Id" autocomplete="off">
                         <input type="submit" value="Eliminar producto">
                 </form>
             </div>

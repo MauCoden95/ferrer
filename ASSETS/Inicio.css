@@ -441,7 +441,6 @@ body{
     width: 70%;
     min-height: 15rem;
     border: .1rem solid var(--color-principal);
-    padding: .5rem;
     display: none;
     margin: 0 auto;
     background: rgba(205, 205, 205, 0.9);

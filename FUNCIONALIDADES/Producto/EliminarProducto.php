@@ -5,14 +5,14 @@
         session_start();
 
 
-        $name_product = isset($_POST['description']) ? $_POST['description'] : false;
+        $id_product = isset($_POST['id_product']) ? $_POST['id_product'] : false;
         
-        echo $name_product;
+       
 
-        if (empty($name_product)) {
+        if (empty($id_product)) {
             $_SESSION['error_product_delete'] = "Error, producto vacio";
         }else{
-            $sql = "DELETE FROM productos WHERE descripcion = '$name_product';";
+            $sql = "DELETE FROM productos WHERE id = $id_product;";
             $query = mysqli_query($conexion,$sql);
 
             $error = mysqli_error($conexion);
