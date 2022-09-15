@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/7483adbd94.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./ASSETS/LoginRegistro.css">
+    <link rel="stylesheet" href="./ASSETS/Login.css">
     <title>FerrerSoft 1.0</title>
 </head>
 <body>
@@ -47,7 +47,7 @@
             <input type="password" name="password" placeholder="Ingrese su contraseña" autocomplete="off">
         </div>
         <input type="submit" value="Ingresar" id="enviar">
-        <a href="./PAGINAS/Registrarse.php">Crear cuenta</a>
+       
     </form>
     <?php session_destroy(); ?>
 </body>

@@ -242,6 +242,8 @@ body{
     width: 80%;
     height: 100%;
     overflow-y: scroll;
+    background: url('./IMG/FondoHome.jpg');
+    background-size: cover;
 }
 
 .content-div-inicio{
@@ -363,6 +365,7 @@ body{
     align-items: center;
     justify-content: space-around;
     margin: 0 auto;
+    background: rgba(205, 205, 205, 0.9);
 }
 
 
@@ -411,6 +414,7 @@ body{
     min-height: 15rem;
     border: .1rem solid var(--color-principal);
     margin: 0 auto;
+    background: rgba(205, 205, 205, 0.9);
 }
 
 .delete-product input{
@@ -439,6 +443,7 @@ body{
     padding: .5rem;
     display: none;
     margin: 0 auto;
+    background: rgba(205, 205, 205, 0.9);
 }
 
 .update-product input{
@@ -543,6 +548,7 @@ body{
 #product_table_stock .product_table_hd td,
 #product_table_stock .product_table_bd td{
     padding: 1.5rem;
+    border: .1rem solid #000;
 }
 
 
@@ -582,6 +588,7 @@ body{
     width: 50%;
     min-height: 20rem;
     margin: 2rem auto;  
+    background: rgba(205, 205, 205, 0.9);
 }
 
 .delete-category,
@@ -590,6 +597,7 @@ body{
     width: 50%;
     min-height: 20rem;
     margin: 2rem auto;  
+    background: rgba(205, 205, 205, 0.9);
 }
 
 .save-category{
@@ -727,6 +735,7 @@ body{
     margin: 4rem auto;  
     margin-top: 10rem;
     border: .1rem solid var(--color-principal);
+    background: rgba(205, 205, 205, 0.9);
 }
 
 
@@ -737,6 +746,7 @@ body{
     margin: 2rem auto;  
     margin-bottom: -10rem;
     border: .1rem solid var(--color-principal);
+    background: rgba(205, 205, 205, 0.9);
 }
 
 .delete-provider{
@@ -746,6 +756,7 @@ body{
     margin: 0rem auto;  
     margin-bottom: 28rem;
     border: .1rem solid var(--color-principal);
+    background: rgba(205, 205, 205, 0.9);
 }
 
 
@@ -894,6 +905,46 @@ body{
 #caja-table .caja_table_bd{
     background: #aaa;
 }
+
+
+
+
+
+
+
+
+
+
+
+/*EMPLEADOS*/
+.charge-employer{
+    width: 60%;
+    min-height: 50rem;
+    margin: 3rem auto;
+    border: .1rem solid var(--color-principal);
+    background: rgba(205, 205, 205, 0.9);
+}
+
+.charge-employer input,
+.charge-employer select{
+    display: block;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.charge-employer select{
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+
+
+
+
+
+
+
+
 
 
 
