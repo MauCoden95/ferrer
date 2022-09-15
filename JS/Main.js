@@ -229,3 +229,52 @@ if (buttonTableCaja) {
         formOpenCaja.style.display = "none";
     });
 }
+
+
+
+
+
+
+
+
+
+
+
+//EMPLEADOS
+const addEmployeed = document.querySelector('.btn-add__employeed');
+const updateEmployeed = document.querySelector('.btn-update__employeed');
+const deleteEmployeed = document.querySelector('.btn-delete__employeed');
+const tableButtonEmployeed = document.querySelector('.btn-list__employeed');
+
+const chargeFormEmployeed = document.querySelector('.charge-employer');
+const updateFormEmployeed = document.querySelector('.update-employer');
+const deleteFormEmployeed = document.querySelector('.delete-employer');
+const employeedTable = document.querySelector('#employeed_table');
+
+addEmployeed.addEventListener('click', () => {
+    chargeFormEmployeed.style.display = "block";
+    updateFormEmployeed.style.display = "none";
+    deleteFormEmployeed.style.display = "none";
+    employeedTable.style.display = "none";
+});
+
+updateEmployeed.addEventListener('click', () => {
+    updateFormEmployeed.style.display = "block";
+    chargeFormEmployeed.style.display = "none";
+    deleteFormEmployeed.style.display = "none";
+    employeedTable.style.display = "none";
+});
+
+deleteEmployeed.addEventListener('click', () => {
+    deleteFormEmployeed.style.display = "block";
+    updateFormEmployeed.style.display = "none";
+    chargeFormEmployeed.style.display = "none";
+    employeedTable.style.display = "none";
+});
+
+tableButtonEmployeed.addEventListener('click', () => {
+    employeedTable.style.display = "block";
+    deleteFormEmployeed.style.display = "none";
+    updateFormEmployeed.style.display = "none";
+    chargeFormEmployeed.style.display = "none";
+});
