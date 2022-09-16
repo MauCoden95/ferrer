@@ -19,6 +19,7 @@
 
             if ($verify) {
                 header('Location: ../PAGINAS/Productos');
+                $_SESSION['id'] = $datos_usuario[id];
                 $_SESSION['usuario'] = $datos_usuario;
                 var_dump($_SESSION['usuario']);
             }else{

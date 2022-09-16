@@ -265,13 +265,22 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    background: rgba(205, 205, 205, 0.9);
 }
 
 .change-password h2,
 .change-username h2,
-.user-info h2{
-    font-size: 1.5rem;
+.info-user h2{
+    font-size: 2rem;
     text-align: center;
+}
+
+.info-user p{
+    font-size: 1.2rem;
+}
+
+.info-user b{
+    font-weight: bold;
 }
 
 .content-div input{
