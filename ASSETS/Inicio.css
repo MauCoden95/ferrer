@@ -771,6 +771,7 @@ body{
     padding: 1rem;
     margin: 3rem auto;
     outline: none;
+    border: none;
 }
 
 
@@ -783,6 +784,31 @@ body{
     margin: 3rem auto;
     outline: none;
 }
+
+.charge-provider input[type='submit']{
+    background: rgb(53, 201, 12);
+}
+
+.charge-provider input[type='submit']:hover{
+    background: rgb(112, 255, 72);
+}
+
+.delete-provider input[type='submit']{
+    background: rgb(255, 20, 20);
+}
+
+.delete-provider input[type='submit']:hover{
+    background: rgb(255, 98, 98);
+}
+
+.update-provider input[type='submit']{
+    background: rgb(0, 121, 191);
+}
+
+.update-provider input[type='submit']:hover{
+    background: rgb(7, 222, 226);
+}
+
 
 
 #provider_table{

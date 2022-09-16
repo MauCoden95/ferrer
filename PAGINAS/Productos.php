@@ -97,7 +97,7 @@
 
 
                 <form action="../FUNCIONALIDADES/Producto/EliminarProducto.php" method="POST" class="delete-product">
-                <?php if(isset($_SESSION['error_product_delete'])) : ?>
+                        <?php if(isset($_SESSION['error_product_delete'])) : ?>
                             <div class="error">
                             <p><?php print_r($_SESSION['error_product_delete']); ?></p>
                             </div>

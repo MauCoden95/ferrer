@@ -45,23 +45,23 @@
                             <input type="submit" value="Guardar proveedor">
                     </form>
 
-                <form action="../FUNCIONALIDADES/Producto/ActualizarProducto.php" method="POST" class="update-provider">
-                
-                            <?php 
-                                $sql = "SELECT * FROM proveedores;";
-                                $query = mysqli_query($conexion, $sql);
-
-                            
-                            ?>
 
 
-                            <select name="descripcion">
-                            <option value="--Razon Social--">--Razon Social--</option>
-                                    <?php while($pro = mysqli_fetch_assoc($query)) : ?>
-                                        <option value="<?= pro['razon_social'] ?>"><?= $pro['razon_social'] ?></option>         
-                                <?php endwhile; ?>
-                            
-                            </select>
+
+
+
+
+                <form action="../FUNCIONALIDADES/Proveedor/ActualizarProveedor.php" method="POST" class="update-provider">
+                        <?php if(isset($_SESSION['error_provider_update'])) : ?>
+                            <div class="error">
+                            <p><?php print_r($_SESSION['error_provider_update']); ?></p>
+                            </div>
+                        <?php elseif(isset($_SESSION['success_provider_update'])) : ?>
+                            <div class="success">
+                                <p><?php print_r($_SESSION['success_provider_update']); ?></p>
+                            </div>
+                        <?php endif; ?>
+                            <input type="number" name="id_provider" placeholder="Id" autocomplete="off">
                             <input type="text" name="name" placeholder="Razon social" autocomplete="off">
                             <input type="text" name="address" placeholder="Direccion" autocomplete="off">
                             <input type="text" name="city" placeholder="Ciudad" autocomplete="off">
@@ -71,8 +71,17 @@
                         <input type="submit" value="Actualizar proveedor">
                 </form>
 
+
+
+
+
+
                 <form action="../FUNCIONALIDADES/Proveedor/EliminarProveedor.php" method="POST" class="delete-provider">
-                        <?php if(isset($_SESSION['success_provider_delete'])) : ?>
+                        <?php if(isset($_SESSION['error_provider_delete'])) : ?>
+                            <div class="error">
+                            <p><?php print_r($_SESSION['error_provider_delete']); ?></p>
+                            </div>
+                        <?php elseif(isset($_SESSION['success_provider_delete'])) : ?>
                             <div class="success">
                                 <p><?php print_r($_SESSION['success_provider_delete']); ?></p>
                             </div>
@@ -83,13 +92,7 @@
 
                    
                 ?>
-                        <select name="razon_social">
-                        <option value="--Razon Social--">--Razon Social--</option>
-                                <?php while($prod = mysqli_fetch_assoc($query)) : ?>
-                                    <option value="<?= $prod['razon_social'] ?>"><?= $prod['razon_social'] ?></option>         
-                            <?php endwhile; ?>
-                        
-                        </select>
+                        <input type="number" name="id_provider" placeholder="Id" autocomplete="off">
                         <input type="submit" value="Eliminar proveedor">
                 </form>
             </div>
