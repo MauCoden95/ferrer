@@ -65,7 +65,6 @@
                     <p><b>Fecha de nacimiento:</b> <?= $newDate ?></p>
                     <p><b>Sueldo:</b> <?= $sql_empleados_fetch['sueldo'].' $' ?></p>
                     <p><b>Usuario:</b> <?= $sql_usuarios_fetch['username'] ?></p>
-                    <p><b>Es Administrador:</b> <?= $_SESSION['es_admin'] ?></p>
             </form>
             </div>
             
