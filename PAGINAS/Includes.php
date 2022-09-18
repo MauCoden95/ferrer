@@ -12,6 +12,13 @@
     <script src="https://kit.fontawesome.com/7483adbd94.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../ASSETS/Inicio.css">
     <link rel="shortcut icon" href="../ASSETS/IMG/LogoInicio.png" type="image/x-icon">
+    <!--PARA QUE NO SE ALMACENE EN CACHE-->
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    
     <title>FerrerSoft 1.0</title>
 </head>
 <body>

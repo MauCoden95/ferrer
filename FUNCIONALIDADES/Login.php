@@ -11,7 +11,7 @@
         $consulta = mysqli_query($conexion, $sql);
 
         if ($sql) {
-            echo "Exist";
+            //echo "Exist";
             $datos_usuario = mysqli_fetch_assoc($consulta);
             
 
@@ -21,7 +21,14 @@
                 header('Location: ../PAGINAS/Productos');
                 $_SESSION['id'] = $datos_usuario[id];
                 $_SESSION['usuario'] = $datos_usuario;
-                var_dump($_SESSION['usuario']);
+                //var_dump($_SESSION['usuario']);
+                print_r($datos_usuario);
+
+                if ($datos_usuario[rol] == 'Administrador') {
+                    $_SESSION['es_admin'] = true;
+                }else{
+                    $_SESSION['es_admin'] = false;
+                }
             }else{
                 $_SESSION['error'] = "Error, usuario y/o contraseña incorrectos";
                 header('Location: ../Index.php');

@@ -1073,6 +1073,7 @@ body{
     justify-content: space-evenly;
     border-left: .2rem solid black;
     text-align: center;
+    background: #fff;
 }
 
 .info-system h2{

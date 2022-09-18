@@ -45,8 +45,8 @@ body{
 }
 
 #form{
-    min-width: 47rem;
-    min-height: 60rem;
+    min-width: 40rem;
+    min-height: 55rem;
     background: #fff;
     border-radius: 1rem;
     display: flex;
@@ -57,7 +57,7 @@ body{
 
 #form img{
     display: block;
-    width: 30rem;
+    width: 25rem;
 }
 
 #form div{
@@ -70,7 +70,7 @@ body{
 #form div input[type="password"]{
     display: block;
     width: 80%;
-    margin: 2rem auto;
+    margin: 1rem auto;
     border: .1rem solid var(--color-principal);
     font-size: 1.5rem;
     padding: 1rem;
