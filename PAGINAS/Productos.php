@@ -21,7 +21,6 @@
                 
                 <button class="btn-add__product">Agregar Producto<i class="fas fa-plus-circle add-icon"></i></button>
                 <button class="btn-update__product">Actualizar Producto<i class="fas fa-edit update-icon"></i></button>
-                <button class="btn-delete__product">Eliminar Producto<i class="fas fa-minus-circle delete-icon"></i></button>
                 <button class="btn-list__product">Listado Productos<i class="fas fa-list list-icon"></i></button>
                     
             </div>
@@ -96,19 +95,6 @@
 
 
 
-                <form action="../FUNCIONALIDADES/Producto/EliminarProducto.php" method="POST" class="delete-product">
-                        <?php if(isset($_SESSION['error_product_delete'])) : ?>
-                            <div class="error">
-                            <p><?php print_r($_SESSION['error_product_delete']); ?></p>
-                            </div>
-                        <?php elseif(isset($_SESSION['success_product_delete'])) : ?>
-                            <div class="success">
-                                <p><?php print_r($_SESSION['success_product_delete']); ?></p>
-                            </div>
-                        <?php endif; ?>
-                        <input type="number" name="id_product" placeholder="Id" autocomplete="off">
-                        <input type="submit" value="Eliminar producto">
-                </form>
             </div>
                 
          
@@ -129,6 +115,7 @@
                                 <td>Precio</td>
                                 <td>Stock</td>
                                 <td>Stock de reposicion</td>
+                                <td>Opciones</td>
                             </tr>
 
                                 <?php 
@@ -149,6 +136,11 @@
                                 <td><?php echo $view['precio']; ?></td>
                                 <td><?php echo $view['stock']; ?></td>
                                 <td><?php echo $view['stock_reposicion']; ?></td>
+                                <td>
+                                    <a class='delete-icon' href="http://localhost/FerrerSoft/FUNCIONALIDADES/Producto/EliminarProducto.php?id= <?= $view['id']?>"><i class="fas fa-trash-alt"></i></a>
+                                    <a class='update-icon' href="http://localhost/FerrerSoft/FUNCIONALIDADES/DeleteProduct.php?id= <?= $view['id']?>"><i class="fas fa-edit"></i></a>
+                                </td>
+                               
                             </tr>
 
                             

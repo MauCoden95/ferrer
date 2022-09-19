@@ -52,6 +52,7 @@
                                         <td>Apertura de caja</td>
                                         <td>Cierre de caja</td>
                                         <td>Fecha</td>
+                                        <td>Opciones</td>
                                     </tr>
                                 </thead>
 
@@ -74,6 +75,10 @@
                                             echo $newDate; 
 
                                         ?>
+                                    </td>
+                                    <td>
+                                        <a class='delete-icon' href="http://localhost/FerrerSoft/FUNCIONALIDADES/Caja/EliminarCaja.php?id= <?= $view['id']?>"><i class="fas fa-trash-alt"></i></a>
+                                        <a class='update-icon' href="http://localhost/FerrerSoft/FUNCIONALIDADES/DeleteProduct.php?id= <?= $view['id']?>"><i class="fas fa-edit"></i></a>
                                     </td>
                                 </tr>
 

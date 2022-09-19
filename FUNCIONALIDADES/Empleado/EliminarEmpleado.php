@@ -9,14 +9,19 @@
 
             echo $id;
 
-            $sql = "DELETE FROM categorias WHERE id = $id;";
+           
+
+            $sql_empleado = "DELETE FROM usuarios WHERE empleado_id = $id;";
+            $query_empleado = mysqli_query($conexion,$sql_empleado);
+
+            $sql = "DELETE FROM empleados WHERE id = $id;";
             $query = mysqli_query($conexion,$sql);
         }
 
      
     }
 
-    Header('Location: ../../PAGINAS/Categorias.php');
+    Header('Location: ../../PAGINAS/Empleados.php');
 
 
 ?>

@@ -9,14 +9,14 @@
 
             echo $id;
 
-            $sql = "DELETE FROM categorias WHERE id = $id;";
+            $sql = "DELETE FROM cajas WHERE id = $id;";
             $query = mysqli_query($conexion,$sql);
         }
 
      
     }
 
-    Header('Location: ../../PAGINAS/Categorias.php');
+    Header('Location: ../../PAGINAS/Caja.php');
 
 
 ?>

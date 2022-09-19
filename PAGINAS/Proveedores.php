@@ -20,7 +20,6 @@
                 
                 <button class="btn-add__provider">Agregar Proveedor<i class="fas fa-plus-circle add-icon"></i></button>
                 <button class="btn-update__provider">Actualizar Proveedor<i class="fas fa-edit update-icon"></i></button>
-                <button class="btn-delete__provider">Eliminar Proveedor<i class="fas fa-minus-circle delete-icon"></i></button>
                 <button class="btn-list__provider">Listado Proveedores<i class="fas fa-list list-icon"></i></button>
                     
             </div>
@@ -76,25 +75,7 @@
 
 
 
-                <form action="../FUNCIONALIDADES/Proveedor/EliminarProveedor.php" method="POST" class="delete-provider">
-                        <?php if(isset($_SESSION['error_provider_delete'])) : ?>
-                            <div class="error">
-                            <p><?php print_r($_SESSION['error_provider_delete']); ?></p>
-                            </div>
-                        <?php elseif(isset($_SESSION['success_provider_delete'])) : ?>
-                            <div class="success">
-                                <p><?php print_r($_SESSION['success_provider_delete']); ?></p>
-                            </div>
-                        <?php endif; ?>
-                <?php 
-                    $sql = "SELECT * FROM proveedores;";
-                    $query = mysqli_query($conexion, $sql);
-
-                   
-                ?>
-                        <input type="number" name="id_provider" placeholder="Id" autocomplete="off">
-                        <input type="submit" value="Eliminar proveedor">
-                </form>
+             
             </div>
                 
 
@@ -108,6 +89,7 @@
                                         <td>Codigo Postal</td>
                                         <td>Telefono</td>
                                         <td>Cuit</td>
+                                        <td>Opciones</td>
                                     </tr>
                                 </thead>
 
@@ -128,6 +110,10 @@
                                     <td><?php echo $view['codigo_postal']; ?></td>
                                     <td><?php echo $view['telefono']; ?></td>
                                     <td><?php echo $view['cuit']; ?></td>
+                                    <td>
+                                        <a class='delete-icon' href="http://localhost/FerrerSoft/FUNCIONALIDADES/Proveedor/EliminarProveedor.php?id= <?= $view['id']?>"><i class="fas fa-trash-alt"></i></a>
+                                        <a class='update-icon' href="http://localhost/FerrerSoft/FUNCIONALIDADES/DeleteProduct.php?id= <?= $view['id']?>"><i class="fas fa-edit"></i></a>
+                                    </td>
                                 </tr>
 
                                 

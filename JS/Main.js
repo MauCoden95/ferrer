@@ -7,12 +7,10 @@
 
      const add_product = document.querySelector('.btn-add__product');
      const update_product = document.querySelector('.btn-update__product');
-     const delete_product = document.querySelector('.btn-delete__product');
      const list_product = document.querySelector('.btn-list__product');
  
      const div_save_product = document.querySelector('.charge-product');
      const div_update_product = document.querySelector('.update-product');
-     const div_delete_product = document.querySelector('.delete-product');
      const table = document.querySelector('.tables');
  
      if (productList) {
@@ -36,7 +34,6 @@
     add_product.addEventListener('click', ()=> {
         div_save_product.style.display = "block";
         div_update_product.style.display = "none";
-        div_delete_product.style.display = "none";
         table.style.display = "none";
     });
    }
@@ -45,20 +42,12 @@
         update_product.addEventListener('click', ()=> {
             div_update_product.style.display = "block";
             div_save_product.style.display = "none";
-            div_delete_product.style.display = "none";
             table.style.display = "none";
         });   
     }
  
      
-    if (delete_product) {
-        delete_product.addEventListener('click', () => {
-            div_delete_product.style.display = "block";
-            div_save_product.style.display = "none";
-            div_update_product.style.display = "none";
-            table.style.display = "none";
-        });
-    }
+   
  
     
     if (list_product) {
@@ -66,7 +55,6 @@
             table.style.display = "block";
             div_save_product.style.display = "none";
             div_update_product.style.display = "none";
-            div_delete_product.style.display = "none";
         });   
     }
  
@@ -80,12 +68,10 @@
  
      const add_category = document.querySelector('.btn-add__category');
      const update_category = document.querySelector('.btn-update__category');
-     const delete_category = document.querySelector('.btn-delete__category');
      const list_category = document.querySelector('.btn-list__category');
  
      const div_save_category = document.querySelector('.save-category');
      const div_update_category = document.querySelector('.update-category');
-     const div_delete_category = document.querySelector('.delete-category');
      const table_category = document.querySelector('#category_table');
  
 
@@ -93,7 +79,6 @@
         add_category.addEventListener('click', ()=> {
             div_save_category.style.display = "block";
             div_update_category.style.display = "none";
-            div_delete_category.style.display = "none";
             table_category.style.display = "none";
         });
     }
@@ -103,28 +88,17 @@
         update_category.addEventListener('click', ()=> {
             div_update_category.style.display = "block";
             div_save_category.style.display = "none";
-            div_delete_category.style.display = "none";
             table_category.style.display = "none";
         });    
      }
  
 
-
-     if (delete_category) {
-        delete_category.addEventListener('click', () => {
-            div_delete_category.style.display = "block";
-            div_save_category.style.display = "none";
-            div_update_category.style.display = "none";
-            table_category.style.display = "none";
-        });   
-     }
     
      if (list_category) {
         list_category.addEventListener('click', () => {
             table_category.style.display = "block";
             div_save_category.style.display = "none";
             div_update_category.style.display = "none";
-            div_delete_category.style.display = "none";
         });    
      }
 
@@ -140,13 +114,11 @@
  
      const add_provider = document.querySelector('.btn-add__provider');
      const update_provider = document.querySelector('.btn-update__provider');
-     const delete_provider = document.querySelector('.btn-delete__provider');
      const list_provider = document.querySelector('.btn-list__provider');
 
  
      const div_save_provider = document.querySelector('.charge-provider');
      const div_update_provider = document.querySelector('.update-provider');
-     const div_delete_provider = document.querySelector('.delete-provider');
      const table_provider = document.querySelector('#provider_table');
  
 
@@ -154,7 +126,6 @@
         add_provider.addEventListener('click', ()=> {
             div_save_provider.style.display = "block";
             div_update_provider.style.display = "none";
-            div_delete_provider.style.display = "none";
             table_provider.style.display = "none";
         });
     }
@@ -164,21 +135,12 @@
         update_provider.addEventListener('click', ()=> {
             div_update_provider.style.display = "block";
             div_save_provider.style.display = "none";
-            div_delete_provider.style.display = "none";
             table_provider.style.display = "none";
         });    
      }
  
 
 
-     if (delete_provider) {
-        delete_provider.addEventListener('click', () => {
-            div_delete_provider.style.display = "block";
-            div_save_provider.style.display = "none";
-            div_update_provider.style.display = "none";
-            table_provider.style.display = "none";
-        });   
-     }
     
 
      if (list_provider) {
@@ -186,7 +148,6 @@
             table_provider.style.display = "block";
             div_save_provider.style.display = "none";
             div_update_provider.style.display = "none";
-            div_delete_provider.style.display = "none";
         });    
      }
     
@@ -243,38 +204,28 @@ if (buttonTableCaja) {
 //EMPLEADOS
 const addEmployeed = document.querySelector('.btn-add__employeed');
 const updateEmployeed = document.querySelector('.btn-update__employeed');
-const deleteEmployeed = document.querySelector('.btn-delete__employeed');
 const tableButtonEmployeed = document.querySelector('.btn-list__employeed');
 
 const chargeFormEmployeed = document.querySelector('.charge-employer');
 const updateFormEmployeed = document.querySelector('.update-employer');
-const deleteFormEmployeed = document.querySelector('.delete-employer');
 const employeedTable = document.querySelector('#employeed_table');
 
 addEmployeed.addEventListener('click', () => {
     chargeFormEmployeed.style.display = "block";
     updateFormEmployeed.style.display = "none";
-    deleteFormEmployeed.style.display = "none";
     employeedTable.style.display = "none";
 });
 
 updateEmployeed.addEventListener('click', () => {
     updateFormEmployeed.style.display = "block";
     chargeFormEmployeed.style.display = "none";
-    deleteFormEmployeed.style.display = "none";
     employeedTable.style.display = "none";
 });
 
-deleteEmployeed.addEventListener('click', () => {
-    deleteFormEmployeed.style.display = "block";
-    updateFormEmployeed.style.display = "none";
-    chargeFormEmployeed.style.display = "none";
-    employeedTable.style.display = "none";
-});
+
 
 tableButtonEmployeed.addEventListener('click', () => {
     employeedTable.style.display = "block";
-    deleteFormEmployeed.style.display = "none";
     updateFormEmployeed.style.display = "none";
     chargeFormEmployeed.style.display = "none";
 });

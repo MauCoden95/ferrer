@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST)) {
-        require_once './Conexion.php';
+        require_once '../Conexion.php';
         session_start();
         $password = isset($_POST['change-password']) ? $_POST['change-password'] : false;
 

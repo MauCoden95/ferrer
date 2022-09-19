@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST)) {
-        require_once './Conexion.php';
+        require_once '../Conexion.php';
         session_start();
 
         $username = isset($_POST['change-username']) ? $_POST['change-username'] : false;
@@ -8,7 +8,7 @@
         
        if (empty($username)) {
             $_SESSION['change_username_failed'] = "Error, usuario vacio";
-            header('Location: ../PAGINAS/Inicio.php');
+            header('Location: ../../PAGINAS/Inicio.php');
        }else{
             
     
@@ -32,7 +32,7 @@
         
     }
 
-    header('Location: ../PAGINAS/Inicio.php'); 
+    header('Location: ../../PAGINAS/Inicio.php'); 
 
 
 
