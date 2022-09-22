@@ -26,7 +26,7 @@
 
 
             if ($_POST) {
-                $categoria = isset($_POST['category']) ? $_POST['category'] : false;
+                $categoria = isset($_POST['categoria']) ? $_POST['categoria'] : false;
                 $proveedor = isset($_POST['proveedor']) ? $_POST['proveedor'] : false;
                 $descripcion = isset($_POST['description_update']) ? $_POST['description_update'] : false;
                 $precio = isset($_POST['price_update']) ? $_POST['price_update'] : false;
@@ -37,10 +37,12 @@
                 $query_category = mysqli_query($conexion, "SELECT id FROM categorias WHERE nombre = '$categoria'");
                 $fetch_query_category = mysqli_fetch_assoc($query_category);
 
-                $query_provider = mysqli_query($conexion, "SELECT id FROM categorias WHERE nombre = '$categoria'");
+                
+
+                $query_provider = mysqli_query($conexion, "SELECT id FROM proveedores WHERE razon_social = '$proveedor'");
                 $fetch_query_provider = mysqli_fetch_assoc($query_provider);
 
-                echo $fetch_query_category['id'].' '.$fetch_query_provider['id'].' '.$descripcion.' '.$precio.' '.$stock.' '.$stock_reposicion;
+                //echo $fetch_query_category['id'].'<br>'.$fetch_query_provider['id'].'<br>'.$descripcion.'<br>'.$precio.'<br>'.$stock.'<br>'.$stock_reposicion;
 
                 $query_update = mysqli_query($conexion, "UPDATE productos SET categoria_id = $fetch_query_category[id], proveedor_id = $fetch_query_provider[id], descripcion = '$descripcion', precio = $precio, stock = $stock, stock_reposicion = $stock_reposicion WHERE id = $id");
                 $error = mysqli_error($conexion);
@@ -127,8 +129,8 @@
                 <form action="#" method="POST" class='form-update'>
 
                              
-                        <input type="text" name="category" value="<?= $query_categoria_fetch['nombre'] ?>" autocomplete="off">
-                        <input type="text" name="provider" value="<?= $query_proveedor_fetch['razon_social'] ?>" autocomplete="off">
+                        <input type="text" name="categoria" value="<?= $query_categoria_fetch['nombre'] ?>" autocomplete="off">
+                        <input type="text" name="proveedor" value="<?= $query_proveedor_fetch['razon_social'] ?>" autocomplete="off">
                         <input type="text" name="description_update" value="<?= $query_fetch['descripcion'] ?>" autocomplete="off">
                         <input type="number" name="price_update" value="<?= $query_fetch['precio'] ?>">
                         <input type="number" name="stock_update" value="<?= $query_fetch['stock'] ?>">
