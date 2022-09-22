@@ -33,7 +33,6 @@
    if (add_product) {
     add_product.addEventListener('click', ()=> {
         div_save_product.style.display = "block";
-        div_update_product.style.display = "none";
         table.style.display = "none";
     });
    }
@@ -41,7 +40,6 @@
     if (update_product) {
         update_product.addEventListener('click', ()=> {
             div_update_product.style.display = "block";
-            div_save_product.style.display = "none";
             table.style.display = "none";
         });   
     }
@@ -54,7 +52,6 @@
         list_product.addEventListener('click', () => {
             table.style.display = "block";
             div_save_product.style.display = "none";
-            div_update_product.style.display = "none";
         });   
     }
  
@@ -210,22 +207,29 @@ const chargeFormEmployeed = document.querySelector('.charge-employer');
 const updateFormEmployeed = document.querySelector('.update-employer');
 const employeedTable = document.querySelector('#employeed_table');
 
-addEmployeed.addEventListener('click', () => {
-    chargeFormEmployeed.style.display = "block";
-    updateFormEmployeed.style.display = "none";
-    employeedTable.style.display = "none";
-});
+if (addEmployeed) {
+    addEmployeed.addEventListener('click', () => {
+        chargeFormEmployeed.style.display = "block";
+        updateFormEmployeed.style.display = "none";
+        employeedTable.style.display = "none";
+    });    
+}
 
-updateEmployeed.addEventListener('click', () => {
-    updateFormEmployeed.style.display = "block";
-    chargeFormEmployeed.style.display = "none";
-    employeedTable.style.display = "none";
-});
+if (updateEmployeed) {
+    updateEmployeed.addEventListener('click', () => {
+        updateFormEmployeed.style.display = "block";
+        chargeFormEmployeed.style.display = "none";
+        employeedTable.style.display = "none";
+    });    
+}
 
 
+if (tableButtonEmployeed) {
+    tableButtonEmployeed.addEventListener('click', () => {
+        employeedTable.style.display = "block";
+        updateFormEmployeed.style.display = "none";
+        chargeFormEmployeed.style.display = "none";
+    });    
+}
 
-tableButtonEmployeed.addEventListener('click', () => {
-    employeedTable.style.display = "block";
-    updateFormEmployeed.style.display = "none";
-    chargeFormEmployeed.style.display = "none";
-});
+

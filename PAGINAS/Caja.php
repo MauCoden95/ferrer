@@ -77,8 +77,8 @@
                                         ?>
                                     </td>
                                     <td>
-                                        <a class='delete-icon' href="http://localhost/FerrerSoft/FUNCIONALIDADES/Caja/EliminarCaja.php?id= <?= $view['id']?>"><i class="fas fa-trash-alt"></i></a>
-                                        <a class='update-icon' href="http://localhost/FerrerSoft/FUNCIONALIDADES/DeleteProduct.php?id= <?= $view['id']?>"><i class="fas fa-edit"></i></a>
+                                        <a class='delete-icon-button' href="http://localhost/FerrerSoft/FUNCIONALIDADES/Caja/EliminarCaja.php?id= <?= $view['id']?>"><i class="fas fa-trash-alt"></i></a>
+                                        <a class='update-icon-button' href="http://localhost/FerrerSoft/FUNCIONALIDADES/DeleteProduct.php?id= <?= $view['id']?>"><i class="fas fa-edit"></i></a>
                                     </td>
                                 </tr>
 

@@ -1,57 +1,156 @@
-<?php
+<?php 
+    session_start(); 
+    
     require_once '../Conexion.php';
-    session_start();
+   
+    if (isset($_GET)) {
+        $id = isset($_GET['id']) ? $_GET['id'] : false;
 
-    if (isset($_POST)) {
-        $id = isset($_POST['id_product']) ? $_POST['id_product'] : false;
-        $categoria = isset($_POST['category']) ? $_POST['category'] : false;
-        $proveedor = isset($_POST['provider']) ? $_POST['provider'] : false;
-        $descripcion = isset($_POST['description_update']) ? $_POST['description_update'] : false;
-        $precio = isset($_POST['price_update']) ? $_POST['price_update'] : false;
-        $stock = isset($_POST['stock_update']) ? $_POST['stock_update'] : false;
-        $stock_reposicion = isset($_POST['stock_reposition_update']) ? $_POST['stock_reposition_update'] : false;
+       
+        $query = mysqli_query($conexion,"SELECT * FROM productos WHERE id = $id;");
 
-        echo $id.' - '
-                .$categoria.' - '
-                .$proveedor.' - '
-                .$descripcion.' - '
-                .$precio.' - '
-                .$stock.' - '
-                .$stock_reposicion;
-        echo "<hr>";
+        if ($query) {
+            $query_fetch = mysqli_fetch_assoc($query);
+            
+            
 
-        $sql_id = "SELECT * FROM productos WHERE id = $id";
-        $query_product = mysqli_query($conexion,$sql_id);
-        $query_product_fetch = mysqli_fetch_assoc($query_product);
-        var_dump($query_product_fetch);
-        
-        echo "<hr>";
-        $sql_provider = "SELECT id FROM proveedores WHERE razon_social = '$proveedor'";
-        $query_provider = mysqli_query($conexion,$sql_provider);
-        $query_provider_fetch = mysqli_fetch_assoc($query_provider);
-        var_dump($query_provider_fetch);
+            $query_categoria = mysqli_query($conexion,"SELECT * FROM categorias WHERE id = $query_fetch[categoria_id]");
+            $query_categoria_fetch = mysqli_fetch_assoc($query_categoria);
 
-        echo "<hr>";
-        $sql_category = "SELECT id FROM categorias WHERE nombre = '$categoria'";
-        $query_category = mysqli_query($conexion,$sql_category);
-        $query_category_fetch = mysqli_fetch_assoc($query_category);
-        var_dump($query_category_fetch);
+            $query_proveedor = mysqli_query($conexion,"SELECT * FROM proveedores WHERE id = $query_fetch[proveedor_id]");
+            $query_proveedor_fetch = mysqli_fetch_assoc($query_proveedor);
+            
 
-        echo "<hr>";
 
-        $sql_update = "UPDATE productos SET categoria_id = $query_category_fetch[id], proveedor_id = $query_provider_fetch[id], descripcion = '$descripcion', precio = $precio, stock = $stock, stock_reposicion = $stock_reposicion  WHERE id = $id;";
-        $query_update = mysqli_query($conexion,$sql_update);
 
-        if ($query_update) {
-            echo "COMPLETE";
-            $_SESSION['success_product_update'] = "Producto actualizado con exito!!!";
-        }else{
-            echo "FAILED";
-            $_SESSION['error_product_update'] = "Hubo un error al actualizar el producto";
+            if ($_POST) {
+                $categoria = isset($_POST['category']) ? $_POST['category'] : false;
+                $proveedor = isset($_POST['proveedor']) ? $_POST['proveedor'] : false;
+                $descripcion = isset($_POST['description_update']) ? $_POST['description_update'] : false;
+                $precio = isset($_POST['price_update']) ? $_POST['price_update'] : false;
+                $stock = isset($_POST['stock_update']) ? $_POST['stock_update'] : false;
+                $stock_reposicion = isset($_POST['stock_reposition_update']) ? $_POST['stock_reposition_update'] : false;
+
+               
+                $query_category = mysqli_query($conexion, "SELECT id FROM categorias WHERE nombre = '$categoria'");
+                $fetch_query_category = mysqli_fetch_assoc($query_category);
+
+                $query_provider = mysqli_query($conexion, "SELECT id FROM categorias WHERE nombre = '$categoria'");
+                $fetch_query_provider = mysqli_fetch_assoc($query_provider);
+
+                $query_update = mysqli_query($conexion, "UPDATE productos SET categoria_id = $fetch_query_category[id], proveedor_id = $fetch_query_provider[id], descripcion = '$descripcion', precio = $precio, stock = $stock, stock_reposicion = $stock_reposicion WHERE id = $id");
+                
+                if ($query_update) {
+                    echo "Success";
+                }else{
+                    echo "Failed";
+                }
+            }
+            
         }
     }
+?>
 
-    header('Location: ../../PAGINAS/Productos.php');
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7483adbd94.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../ASSETS/Inicio.css">
+    <link rel="shortcut icon" href="../../ASSETS/IMG/LogoInicio.png" type="image/x-icon">
+    
 
     
-?>
+    <title>FerrerSoft 1.0</title>
+</head>
+<body>
+    <header id="header">
+            <img src="../../ASSETS/IMG/LogoInicio.png" alt="logo">
+            <div id="date">
+                <?php
+                    setlocale(LC_ALL,"es_ES");
+                    $mes = array("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre");
+                    $dia = array("Monday" => "Lunes",
+                    "Tuesday" => "Martes",
+                    "Wednesday"=>"Miercoles",
+                    "Thursday"=>"Jueves",
+                    "Friday"=>"Viernes",
+                    "Saturday"=>"Sabado",
+                    "Sunday"=>"Domingo");
+                    $hour = date("h:I");
+                    $newHour = strtotime('-2 hour',strtotime($hour));
+                    echo $dia[date("l")]." ".date("d")." de ".$mes[date("m")-1]." de ".date("Y");
+                 
+                    echo "  |  ".date("h:i");
+                    
+                ?>
+
+            </div>
+            <div class="header-user">
+                <?php if(isset($_SESSION['usuario'])) : ?>
+                <h2>Bienvenido, <?php print_r($_SESSION['usuario']['username']); ?></h2>
+                <?php endif; ?>
+                <a href="../../Index.php">Cerrar Sesión</a>
+            </div>
+    </header>
+
+    <section id="container">
+        <navbar id="nav">
+            <ul>
+                    <?php if($_SESSION['es_admin'] == true): ?>
+                        <li><a href="../../PAGINAS/Inicio.php"><span>Panel de Control</span><i class="fas fa-cogs"></i></a></li>
+                        <li><a href="../../PAGINAS/Productos"><span>Productos</span><i class="fas fa-box"></i></a></li>
+                        <li><a href="../../PAGINAS/Categorias.php"><span>Categorias</span><i class="fas fa-list-ul"></i></a></li>
+                        <li><a href="../../PAGINAS/Ventas.php"><span>Ventas</span><i class="fas fa-coins"></i></a></li>
+                        <li><a href="../../PAGINAS/Proveedores.php"><span>Proveedores</span><i class="fas fa-cart-arrow-down"></i></a></li>
+                        <li><a href="../../PAGINAS/Empleados.php"><span>Empleados</span><i class="fas fa-briefcase"></i></a></li>
+                        <li><a href="../../PAGINAS/Reportes.php"><span>Reportes</span><i class="fas fa-chart-line"></i></a></li>
+                        <li><a href="../../PAGINAS/Caja.php"><span>Caja</span><i class="fas fa-money-bill-wave"></i></a></li>
+                        <li><a href="../../PAGINAS/Acercade.php"><span>Acerca de</span><i class="fas fa-address-book"></i></a></li>
+                    
+                    <?php endif; ?>
+            </ul>
+        </navbar>
+
+        
+        <div class="content-div">
+                <form action="#" method="POST" class='form-update'>
+
+                             
+                        <input type="text" name="category" value="<?= $query_categoria_fetch['nombre'] ?>" autocomplete="off">
+                        <input type="text" name="provider" value="<?= $query_proveedor_fetch['razon_social'] ?>" autocomplete="off">
+                        <input type="text" name="description_update" value="<?= $query_fetch['descripcion'] ?>" autocomplete="off">
+                        <input type="number" name="price_update" value="<?= $query_fetch['precio'] ?>">
+                        <input type="number" name="stock_update" value="<?= $query_fetch['stock'] ?>">
+                        <input type="number" name="stock_reposition_update" value="<?= $query_fetch['stock_reposicion'] ?>">
+                        <input type="submit" value="Actualizar producto">
+                </form>
+                
+
+               
+    
+
+               
+
+
+               
+        </div>
+    </section>
+    
+
+    
+    </body>
+</html>
+
+
+       
+
+                
+    
+
+        
+        
+        
