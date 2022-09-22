@@ -14,11 +14,13 @@
             
             
 
-            $query_categoria = mysqli_query($conexion,"SELECT * FROM categorias WHERE id = $query_fetch[categoria_id]");
+            $query_categoria = mysqli_query($conexion,"SELECT nombre FROM categorias WHERE id = $query_fetch[categoria_id]");
             $query_categoria_fetch = mysqli_fetch_assoc($query_categoria);
+            
 
-            $query_proveedor = mysqli_query($conexion,"SELECT * FROM proveedores WHERE id = $query_fetch[proveedor_id]");
+            $query_proveedor = mysqli_query($conexion,"SELECT razon_social FROM proveedores WHERE id = $query_fetch[proveedor_id]");
             $query_proveedor_fetch = mysqli_fetch_assoc($query_proveedor);
+           
             
 
 
@@ -38,12 +40,17 @@
                 $query_provider = mysqli_query($conexion, "SELECT id FROM categorias WHERE nombre = '$categoria'");
                 $fetch_query_provider = mysqli_fetch_assoc($query_provider);
 
+                echo $fetch_query_category['id'].' '.$fetch_query_provider['id'].' '.$descripcion.' '.$precio.' '.$stock.' '.$stock_reposicion;
+
                 $query_update = mysqli_query($conexion, "UPDATE productos SET categoria_id = $fetch_query_category[id], proveedor_id = $fetch_query_provider[id], descripcion = '$descripcion', precio = $precio, stock = $stock, stock_reposicion = $stock_reposicion WHERE id = $id");
-                
+                $error = mysqli_error($conexion);
+
+
                 if ($query_update) {
                     echo "Success";
                 }else{
                     echo "Failed";
+                    echo "<br>".$error;
                 }
             }
             
