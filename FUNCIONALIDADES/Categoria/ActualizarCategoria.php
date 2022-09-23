@@ -1,8 +1,35 @@
-<?php 
-    session_start(); 
-    
+<?php
+    session_start();
     require_once '../Conexion.php';
-   
+
+    if ($_GET) {
+        $id = isset($_GET['id']) ? $_GET['id'] : false;
+
+        
+
+        if ($_POST) {
+            $categoria = isset($_POST['categoria']) ? $_POST['categoria'] : false;
+
+            if ($categoria != '') {
+                $query = mysqli_query($conexion, "UPDATE categorias SET nombre = '$categoria' WHERE id = $id");
+                if($query){
+                    $_SESSION['update_success_category'] = "Categoria actualizada exitosamente";
+                    unset($_SESSION['update_failed_category']);
+                }else{
+                    $_SESSION['update_failed_category'] = "Hubo un error al actualizar la categoria";
+                }     
+            }else{
+                $_SESSION['update_failed_category'] = "Hubo un error al actualizar la categoria";
+            }
+                
+           
+        }
+
+
+        
+    }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -13,9 +40,9 @@
     <script src="https://kit.fontawesome.com/7483adbd94.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../ASSETS/Inicio.css">
     <link rel="shortcut icon" href="../../ASSETS/IMG/LogoInicio.png" type="image/x-icon">
-    
 
-    
+
+
     <title>FerrerSoft 1.0</title>
 </head>
 <body>
@@ -35,9 +62,9 @@
                     $hour = date("h:I");
                     $newHour = strtotime('-2 hour',strtotime($hour));
                     echo $dia[date("l")]." ".date("d")." de ".$mes[date("m")-1]." de ".date("Y");
-                 
+
                     echo "  |  ".date("h:i");
-                    
+
                 ?>
 
             </div>
@@ -72,31 +99,43 @@
             </ul>
         </navbar>
 
-        
+
         <div class="content-div">
-                
+        <form action="#" method="post" class="form-update">
+                        <?php if(isset($_SESSION['update_failed_category'])) : ?>
+                            <div class="error">
+                            <p><?php print_r($_SESSION['update_failed_category']); ?></p>
+                            </div>
+                        <?php elseif(isset($_SESSION['update_success_category'])) : ?>
+                            <div class="success">
+                                <p><?php print_r($_SESSION['update_success_category']); ?></p>
+                            </div>
+                        <?php endif; ?>
 
-               
+                    <input type="text" name="categoria" placeholder="Nombre de la categoria..." autocomplete="off">
+                    <input type="submit" value="Guardar Categoria">
+                </form>
 
 
-               
 
 
-               
+
+
+
+
         </div>
     </section>
-    
 
-    
+
+
     </body>
 </html>
 
 
-       
 
-                
-    
 
-        
-        
-        
+
+
+
+
+

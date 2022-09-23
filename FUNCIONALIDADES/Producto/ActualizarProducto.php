@@ -42,17 +42,17 @@
                 $query_provider = mysqli_query($conexion, "SELECT id FROM proveedores WHERE razon_social = '$proveedor'");
                 $fetch_query_provider = mysqli_fetch_assoc($query_provider);
 
-                //echo $fetch_query_category['id'].'<br>'.$fetch_query_provider['id'].'<br>'.$descripcion.'<br>'.$precio.'<br>'.$stock.'<br>'.$stock_reposicion;
+               
 
                 $query_update = mysqli_query($conexion, "UPDATE productos SET categoria_id = $fetch_query_category[id], proveedor_id = $fetch_query_provider[id], descripcion = '$descripcion', precio = $precio, stock = $stock, stock_reposicion = $stock_reposicion WHERE id = $id");
-                $error = mysqli_error($conexion);
+               
 
 
                 if ($query_update) {
-                    echo "Success";
+                    $_SESSION['update_success_product'] = "Producto actualizado con exito!!!";
+                    unset($_SESSION['update_failed_product']);
                 }else{
-                    echo "Failed";
-                    echo "<br>".$error;
+                    $_SESSION['update_failed_product'] = "Hubo un error al actualizar el producto";                    
                 }
             }
             
@@ -127,7 +127,15 @@
         
         <div class="content-div">
                 <form action="#" method="POST" class='form-update'>
-
+                        <?php if(isset($_SESSION['update_failed_product'])) : ?>
+                            <div class="error">
+                            <p><?php print_r($_SESSION['update_failed_product']); ?></p>
+                            </div>
+                        <?php elseif(isset($_SESSION['update_success_product'])) : ?>
+                            <div class="success">
+                                <p><?php print_r($_SESSION['update_success_product']); ?></p>
+                            </div>
+                        <?php endif; ?>
                              
                         <input type="text" name="categoria" value="<?= $query_categoria_fetch['nombre'] ?>" autocomplete="off">
                         <input type="text" name="proveedor" value="<?= $query_proveedor_fetch['razon_social'] ?>" autocomplete="off">
