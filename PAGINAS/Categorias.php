@@ -18,7 +18,6 @@
                     ?>               
                 </div>
                 <button class="btn-add__category">Agregar Categoria<i class="fas fa-plus-circle add-icon"></i></button>
-                <button class="btn-update__category">Actualizar Categoria<i class="fas fa-edit update-icon"></i></button>
                 <button class="btn-list__category">Listar Categorias<i class="fas fa-list list-icon"></i></button>
             </div>
 
@@ -36,11 +35,6 @@
                     <input type="submit" value="Guardar Categoria">
                 </form>
 
-                <form action="../FUNCIONALIDADES/Categoria/ActualizarCategoria.php" method="post" class="update-category">
-                    <input type="text" name="category_before" placeholder="Nombre categoria anterior" autocomplete="off">
-                    <input type="text" name="category_new" placeholder="Nombre categoria nuevo" autocomplete="off">
-                    <input type="submit" value="Actualizar Categoria">
-                </form>
 
               
 

@@ -20,7 +20,6 @@
                 </div>
 
                 <button class="btn-add__product">Agregar Producto<i class="fas fa-plus-circle add-icon"></i></button>
-                <button class="btn-update__product">Actualizar Producto<i class="fas fa-edit update-icon"></i></button>
                 <button class="btn-list__product">Listado Productos<i class="fas fa-list list-icon"></i></button>
 
             </div>
