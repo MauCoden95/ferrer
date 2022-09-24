@@ -307,8 +307,8 @@ body{
 .error{
     width: 100%;
     height: auto;
-    background: #f00;
-    color: #fff;
+    background: rgb(255, 3, 3);
+    color: rgb(123, 0, 0);
     text-align: center;
     font-size: 1.5rem;
     padding: 1rem;
@@ -317,8 +317,8 @@ body{
 .success{
     width: 100%;
     height: auto;
-    background: rgb(0, 131, 0);
-    color: #fff;
+    background: rgb(0, 250, 0);
+    color: rgb(41, 117, 0);
     text-align: center;
     font-size: 1.5rem;
     padding: 1rem;
