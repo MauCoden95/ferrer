@@ -19,7 +19,6 @@
                 </div>
                 
                 <button class="btn-add__provider">Agregar Proveedor<i class="fas fa-plus-circle add-icon"></i></button>
-                <button class="btn-update__provider">Actualizar Proveedor<i class="fas fa-edit update-icon"></i></button>
                 <button class="btn-list__provider">Listado Proveedores<i class="fas fa-list list-icon"></i></button>
                     
             </div>
@@ -47,28 +46,6 @@
 
 
 
-
-
-
-                <form action="../FUNCIONALIDADES/Proveedor/ActualizarProveedor.php" method="POST" class="update-provider">
-                        <?php if(isset($_SESSION['error_provider_update'])) : ?>
-                            <div class="error">
-                            <p><?php print_r($_SESSION['error_provider_update']); ?></p>
-                            </div>
-                        <?php elseif(isset($_SESSION['success_provider_update'])) : ?>
-                            <div class="success">
-                                <p><?php print_r($_SESSION['success_provider_update']); ?></p>
-                            </div>
-                        <?php endif; ?>
-                            <input type="number" name="id_provider" placeholder="Id" autocomplete="off">
-                            <input type="text" name="name" placeholder="Razon social" autocomplete="off">
-                            <input type="text" name="address" placeholder="Direccion" autocomplete="off">
-                            <input type="text" name="city" placeholder="Ciudad" autocomplete="off">
-                            <input type="number" name="postal_code" placeholder="Codigo Postal" autocomplete="off">
-                            <input type="number" name="phone" placeholder="Telefono" autocomplete="off">
-                            <input type="number" name="cuit" placeholder="Cuit" autocomplete="off">
-                        <input type="submit" value="Actualizar proveedor">
-                </form>
 
 
 

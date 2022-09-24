@@ -94,32 +94,21 @@
  
  
      const add_provider = document.querySelector('.btn-add__provider');
-     const update_provider = document.querySelector('.btn-update__provider');
      const list_provider = document.querySelector('.btn-list__provider');
 
  
      const div_save_provider = document.querySelector('.charge-provider');
-     const div_update_provider = document.querySelector('.update-provider');
      const table_provider = document.querySelector('#provider_table');
  
 
     if (add_provider) {
         add_provider.addEventListener('click', ()=> {
             div_save_provider.style.display = "block";
-            div_update_provider.style.display = "none";
             table_provider.style.display = "none";
         });
     }
 
 
-     if (update_provider) {
-        update_provider.addEventListener('click', ()=> {
-            div_update_provider.style.display = "block";
-            div_save_provider.style.display = "none";
-            table_provider.style.display = "none";
-        });    
-     }
- 
 
 
     
@@ -128,7 +117,6 @@
         list_provider.addEventListener('click', () => {
             table_provider.style.display = "block";
             div_save_provider.style.display = "none";
-            div_update_provider.style.display = "none";
         });    
      }
     

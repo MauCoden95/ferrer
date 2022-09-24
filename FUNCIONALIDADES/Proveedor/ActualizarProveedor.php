@@ -2,18 +2,20 @@
     require_once '../Conexion.php';
     session_start();
 
-    unset($_SESSION['update_failed_provider']);
     
+
     if ($_GET) {
         $id = isset($_GET['id']) ? $_GET['id'] : false;
 
         $query_proveedores = mysqli_query($conexion,"SELECT * FROM proveedores WHERE id = $id");
-        $query_proveedores_fetch = mysqli_fetch_assoc($query_proveedores);
+        
 
         
 
 
         if (isset($_POST)) {
+            $query_proveedores_fetch = mysqli_fetch_assoc($query_proveedores);
+            
             $razon_social = isset($_POST['razon_social']) ? $_POST['razon_social'] : false;
             $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : false;
             $ciudad = isset($_POST['ciudad']) ? $_POST['ciudad'] : false;
@@ -28,7 +30,7 @@
                 $_SESSION['update_success_provider'] = "Proveedor actualizado con exito!!!";
                 unset($_SESSION['update_failed_provider']);
             }else{
-                $_SESSION['update_failed_provider'] = "Hubo un error al actualizar el proveedor!";
+                $_SESSION['update_failed_provider'] = "Hubo un error al actualizar el proveedor";
             }
         }
     }

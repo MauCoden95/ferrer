@@ -119,7 +119,7 @@
                                     <td><?php echo $view['sueldo']; ?></td>
                                     <td>
                                         <a class='delete-icon-button' href="http://localhost/FerrerSoft/FUNCIONALIDADES/Empleado/EliminarEmpleado.php?id= <?= $view['id']?>"><i class="fas fa-trash-alt"></i></a>
-                                        <a class='update-icon-button' href="http://localhost/FerrerSoft/FUNCIONALIDADES/DeleteProduct.php?id= <?= $view['id']?>"><i class="fas fa-edit"></i></a>
+                                        <a class='update-icon-button' href="http://localhost/FerrerSoft/FUNCIONALIDADES/Empleado/ActualizarEmpleado.php?id= <?= $view['id']?>"><i class="fas fa-edit"></i></a>
                                     </td>
                                 </tr>
 
